@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-5) var(--space-4);
+}
+
+.row > * {
+  width: clamp(84px, 22vw, 148px);
+}
+
+.single {
+  display: flex;
+  justify-content: center;
+}
+
+.single > * {
+  width: clamp(140px, 46vw, 220px);
+}

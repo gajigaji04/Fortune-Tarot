@@ -1,0 +1,62 @@
+:root {
+  /* Backgrounds */
+  --color-bg-deep: #170f09;
+  --color-bg-panel: #241708;
+  --color-bg-panel-raised: #2e1d10;
+  --color-parchment: #ece0c8;
+  --color-parchment-dim: #ddceac;
+  --color-parchment-deep: #cbb98d;
+
+  /* Accents */
+  --color-wine: #5c1a1b;
+  --color-wine-deep: #3a1011;
+  --color-wine-bright: #7a2426;
+  --color-gold: #b8863b;
+  --color-gold-bright: #d4af6a;
+  --color-gold-dim: #8a682f;
+
+  /* Text */
+  --color-ink: #2a1d10;
+  --color-ink-soft: #4a3a24;
+  --color-text-on-dark: #ece0c8;
+  --color-text-on-dark-dim: #b7a988;
+  --color-text-on-gold: #241708;
+
+  /* Feedback / state */
+  --color-focus-ring: #d4af6a;
+  --color-border-dark: #4a3520;
+  --color-border-light: #b9a06c;
+
+  /* Typography */
+  --font-display: "Cinzel", "Noto Serif KR", serif;
+  --font-body-en: "EB Garamond", "Cormorant Garamond", serif;
+  --font-body: "Noto Serif KR", "EB Garamond", serif;
+
+  /* Sizing */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  --shadow-card: 0 6px 18px rgba(8, 4, 1, 0.55);
+  --shadow-soft: 0 2px 10px rgba(8, 4, 1, 0.35);
+
+  --duration-flip: 640ms;
+  --duration-shuffle: 1600ms;
+  --ease-flip: cubic-bezier(0.35, 0.05, 0.25, 1);
+
+  --content-max-width: 74rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-flip: 1ms;
+    --duration-shuffle: 1ms;
+  }
+}

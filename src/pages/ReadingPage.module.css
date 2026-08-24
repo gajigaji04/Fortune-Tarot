@@ -1,0 +1,132 @@
+.header {
+  text-align: center;
+  padding: var(--space-7) 0 var(--space-4);
+}
+
+.spreadName {
+  margin-bottom: var(--space-2);
+}
+
+.spreadDesc {
+  color: var(--color-text-on-dark-dim);
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.setup {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: var(--space-5) 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.variantTabs {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.variantTab {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  padding: 0.5em 0.9em;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-on-dark-dim);
+  text-decoration: none;
+}
+
+.variantTabActive {
+  border-color: var(--color-gold);
+  color: var(--color-gold-bright);
+}
+
+.positionsPreview {
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  background: var(--color-bg-panel);
+}
+
+.positionsPreview h2 {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-3);
+}
+
+.positionsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.positionsList li {
+  display: flex;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-text-on-dark-dim);
+}
+
+.positionsList strong {
+  color: var(--color-text-on-dark);
+  flex-shrink: 0;
+}
+
+.drawStage {
+  padding: var(--space-6) 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.drawHint {
+  color: var(--color-text-on-dark-dim);
+  text-align: center;
+  max-width: 30rem;
+}
+
+.resultStage {
+  padding: var(--space-6) 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.questionBanner {
+  text-align: center;
+  max-width: 34rem;
+}
+
+.questionLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.3em;
+}
+
+.questionText {
+  font-family: var(--font-body-en);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-text-on-dark);
+}
+
+.resultActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.savedNote {
+  color: var(--color-gold-bright);
+  font-size: 0.85rem;
+}

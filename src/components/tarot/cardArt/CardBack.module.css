@@ -1,0 +1,24 @@
+.back {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-gold-dim);
+  background:
+    radial-gradient(ellipse at 50% 45%, var(--color-wine-bright) 0%, var(--color-wine) 55%, var(--color-wine-deep) 100%);
+  overflow: hidden;
+}
+
+.back::before {
+  content: "";
+  position: absolute;
+  inset: 6%;
+  border: 1px solid var(--color-gold-dim);
+  opacity: 0.8;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  color: var(--color-gold);
+  opacity: 0.85;
+}

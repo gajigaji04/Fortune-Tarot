@@ -1,0 +1,60 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-8) 0;
+}
+
+.deck {
+  position: relative;
+  width: 128px;
+  aspect-ratio: 5 / 8;
+}
+
+.deckCard {
+  position: absolute;
+  inset: 0;
+  animation: shuffle-jitter var(--duration-shuffle) ease-in-out infinite;
+}
+
+.deckCard:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.deckCard:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.deckCard:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+@keyframes shuffle-jitter {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-6px, -3px) rotate(-4deg);
+  }
+  45% {
+    transform: translate(5px, 2px) rotate(3deg);
+  }
+  70% {
+    transform: translate(-3px, 3px) rotate(-2deg);
+  }
+}
+
+.text {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  color: var(--color-gold-bright);
+  font-size: 1.05rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deckCard {
+    animation: none;
+  }
+}
