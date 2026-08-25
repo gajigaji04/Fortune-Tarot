@@ -1,9 +1,9 @@
-import type { TarotCard } from "../../types/tarot";
+import type { KoCardSource } from "../../types/tarot";
 
-export const wands: TarotCard[] = [
+export const wands: KoCardSource[] = [
   {
     id: "wands-01-ace",
-    name: "Ace of Wands",
+    englishName: "Ace of Wands",
     nameKo: "완드 에이스",
     arcana: "minor",
     suit: "wands",
@@ -20,7 +20,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-02",
-    name: "Two of Wands",
+    englishName: "Two of Wands",
     nameKo: "완드 2",
     arcana: "minor",
     suit: "wands",
@@ -37,7 +37,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-03",
-    name: "Three of Wands",
+    englishName: "Three of Wands",
     nameKo: "완드 3",
     arcana: "minor",
     suit: "wands",
@@ -54,7 +54,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-04",
-    name: "Four of Wands",
+    englishName: "Four of Wands",
     nameKo: "완드 4",
     arcana: "minor",
     suit: "wands",
@@ -71,7 +71,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-05",
-    name: "Five of Wands",
+    englishName: "Five of Wands",
     nameKo: "완드 5",
     arcana: "minor",
     suit: "wands",
@@ -88,7 +88,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-06",
-    name: "Six of Wands",
+    englishName: "Six of Wands",
     nameKo: "완드 6",
     arcana: "minor",
     suit: "wands",
@@ -105,7 +105,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-07",
-    name: "Seven of Wands",
+    englishName: "Seven of Wands",
     nameKo: "완드 7",
     arcana: "minor",
     suit: "wands",
@@ -122,7 +122,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-08",
-    name: "Eight of Wands",
+    englishName: "Eight of Wands",
     nameKo: "완드 8",
     arcana: "minor",
     suit: "wands",
@@ -139,7 +139,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-09",
-    name: "Nine of Wands",
+    englishName: "Nine of Wands",
     nameKo: "완드 9",
     arcana: "minor",
     suit: "wands",
@@ -156,7 +156,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-10",
-    name: "Ten of Wands",
+    englishName: "Ten of Wands",
     nameKo: "완드 10",
     arcana: "minor",
     suit: "wands",
@@ -173,7 +173,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-11-page",
-    name: "Page of Wands",
+    englishName: "Page of Wands",
     nameKo: "완드 페이지",
     arcana: "minor",
     suit: "wands",
@@ -190,7 +190,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-12-knight",
-    name: "Knight of Wands",
+    englishName: "Knight of Wands",
     nameKo: "완드 기사",
     arcana: "minor",
     suit: "wands",
@@ -207,7 +207,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-13-queen",
-    name: "Queen of Wands",
+    englishName: "Queen of Wands",
     nameKo: "완드 여왕",
     arcana: "minor",
     suit: "wands",
@@ -224,7 +224,7 @@ export const wands: TarotCard[] = [
   },
   {
     id: "wands-14-king",
-    name: "King of Wands",
+    englishName: "King of Wands",
     nameKo: "완드 왕",
     arcana: "minor",
     suit: "wands",

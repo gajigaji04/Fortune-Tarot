@@ -1,32 +1,38 @@
-import type { DrawnCard, TarotSpread } from "../../types/tarot";
+import { useTranslation } from "react-i18next";
+import type { DrawnCard, Topic } from "../../types/tarot";
+import { useLang } from "../../hooks/useLang";
+import { getLocalized } from "../../utils/i18n";
 import { interpretationService } from "../../services/interpretationService";
 import styles from "./InterpretationPanel.module.css";
 
 interface InterpretationPanelProps {
   drawnCards: DrawnCard[];
-  spread: TarotSpread;
+  topic: Topic;
   question: string;
 }
 
-export function InterpretationPanel({ drawnCards, spread, question }: InterpretationPanelProps) {
-  const synthesis = interpretationService.getOverallSynthesis(drawnCards, spread, question);
+export function InterpretationPanel({ drawnCards, topic, question }: InterpretationPanelProps) {
+  const { t } = useTranslation();
+  const lang = useLang();
+  const synthesis = interpretationService.getOverallSynthesis(drawnCards, topic, question, lang, t);
 
   return (
     <div className={styles.panel}>
-      <h2 className={styles.sectionTitle}>카드별 해석</h2>
+      <h2 className={styles.sectionTitle}>{t("reading.cardByCard")}</h2>
       {drawnCards.map((drawn) => (
         <div key={drawn.position.id} className={styles.positionBlock}>
-          <h3 className={styles.positionHeading}>[{drawn.position.name}]</h3>
+          <h3 className={styles.positionHeading}>[{getLocalized(drawn.position.name, lang)}]</h3>
           <p className={styles.cardLine}>
-            {drawn.card.name} · {drawn.card.nameKo} — {drawn.orientation === "upright" ? "정방향" : "역방향"}
+            {getLocalized(drawn.card.name, lang)} · {drawn.card.englishName} —{" "}
+            {t(drawn.orientation === "upright" ? "reading.upright" : "reading.reversed")}
           </p>
-          <p className={styles.positionText}>{interpretationService.getPositionReading(drawn)}</p>
+          <p className={styles.positionText}>{interpretationService.getPositionReading(drawn, lang, t)}</p>
         </div>
       ))}
 
       {synthesis.length > 0 && (
         <div className={styles.synthesis}>
-          <h2 className={styles.sectionTitle}>종합 해석</h2>
+          <h2 className={styles.sectionTitle}>{t("reading.overallSynthesis")}</h2>
           {synthesis.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}

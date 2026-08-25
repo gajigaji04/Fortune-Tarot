@@ -1,16 +1,56 @@
-import { Divider } from "../common/Divider";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styles from "./Footer.module.css";
 
 export function Footer() {
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
+
   return (
     <footer className={styles.footer}>
-      <div className={`container ${styles.inner}`}>
-        <Divider />
-        <p className={styles.mark}>THE ARCANA</p>
-        <p className={styles.note}>
-          이 사이트의 타로 리딩은 오락 및 자기 성찰을 위한 것으로, 전문적인 법률·의료·재정 상담을 대신하지
-          않습니다. 모든 기록은 이 브라우저에만 저장되며 서버로 전송되지 않습니다.
-        </p>
+      <div className="container">
+        <div className={styles.grid}>
+          <div className={styles.brandCol}>
+            <p className={styles.mark}>{t("site.name")}</p>
+            <p className={styles.tagline}>{t("footer.tagline")}</p>
+          </div>
+
+          <div>
+            <p className={styles.colHeading}>{t("footer.exploreHeading")}</p>
+            <ul className={styles.linkList}>
+              <li>
+                <Link to="/reading/general?count=1">{t("nav.today")}</Link>
+              </li>
+              <li>
+                <Link to="/cards">{t("nav.cards")}</Link>
+              </li>
+              <li>
+                <Link to="/learn">{t("nav.learn")}</Link>
+              </li>
+              <li>
+                <Link to="/vault">{t("nav.vault")}</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p className={styles.colHeading}>{t("footer.legalHeading")}</p>
+            <ul className={styles.linkList}>
+              <li>
+                <Link to="/privacy">{t("footer.privacy")}</Link>
+              </li>
+              <li>
+                <Link to="/terms">{t("footer.terms")}</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className={styles.bottom}>
+          <div className={styles.bottomRow}>
+            <span>{t("footer.copyright", { year })}</span>
+          </div>
+        </div>
       </div>
     </footer>
   );

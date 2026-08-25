@@ -39,7 +39,7 @@
   top: 0;
   left: 50%;
   width: 108px;
-  aspect-ratio: 5 / 8;
+  aspect-ratio: var(--card-aspect);
   transform-origin: bottom center;
 }
 

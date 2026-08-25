@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
 export function PageShell() {
+  const { t } = useTranslation();
   return (
     <>
       <a href="#main-content" className="visually-hidden">
-        본문 바로가기
+        {t("a11y.skipToContent")}
       </a>
       <Header />
       <main id="main-content" style={{ flex: 1 }}>

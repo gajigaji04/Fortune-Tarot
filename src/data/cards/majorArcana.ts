@@ -1,9 +1,9 @@
-import type { TarotCard } from "../../types/tarot";
+import type { KoCardSource } from "../../types/tarot";
 
-export const majorArcana: TarotCard[] = [
+export const majorArcana: KoCardSource[] = [
   {
     id: "major-00-fool",
-    name: "The Fool",
+    englishName: "The Fool",
     nameKo: "바보",
     arcana: "major",
     number: 0,
@@ -21,7 +21,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-01-magician",
-    name: "The Magician",
+    englishName: "The Magician",
     nameKo: "마법사",
     arcana: "major",
     number: 1,
@@ -39,7 +39,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-02-high-priestess",
-    name: "The High Priestess",
+    englishName: "The High Priestess",
     nameKo: "여사제",
     arcana: "major",
     number: 2,
@@ -57,7 +57,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-03-empress",
-    name: "The Empress",
+    englishName: "The Empress",
     nameKo: "여황제",
     arcana: "major",
     number: 3,
@@ -75,7 +75,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-04-emperor",
-    name: "The Emperor",
+    englishName: "The Emperor",
     nameKo: "황제",
     arcana: "major",
     number: 4,
@@ -93,7 +93,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-05-hierophant",
-    name: "The Hierophant",
+    englishName: "The Hierophant",
     nameKo: "교황",
     arcana: "major",
     number: 5,
@@ -111,7 +111,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-06-lovers",
-    name: "The Lovers",
+    englishName: "The Lovers",
     nameKo: "연인",
     arcana: "major",
     number: 6,
@@ -129,7 +129,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-07-chariot",
-    name: "The Chariot",
+    englishName: "The Chariot",
     nameKo: "전차",
     arcana: "major",
     number: 7,
@@ -147,7 +147,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-08-strength",
-    name: "Strength",
+    englishName: "Strength",
     nameKo: "힘",
     arcana: "major",
     number: 8,
@@ -165,7 +165,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-09-hermit",
-    name: "The Hermit",
+    englishName: "The Hermit",
     nameKo: "은둔자",
     arcana: "major",
     number: 9,
@@ -183,7 +183,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-10-wheel-of-fortune",
-    name: "Wheel of Fortune",
+    englishName: "Wheel of Fortune",
     nameKo: "운명의 수레바퀴",
     arcana: "major",
     number: 10,
@@ -201,7 +201,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-11-justice",
-    name: "Justice",
+    englishName: "Justice",
     nameKo: "정의",
     arcana: "major",
     number: 11,
@@ -219,7 +219,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-12-hanged-man",
-    name: "The Hanged Man",
+    englishName: "The Hanged Man",
     nameKo: "매달린 사람",
     arcana: "major",
     number: 12,
@@ -237,7 +237,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-13-death",
-    name: "Death",
+    englishName: "Death",
     nameKo: "죽음",
     arcana: "major",
     number: 13,
@@ -255,7 +255,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-14-temperance",
-    name: "Temperance",
+    englishName: "Temperance",
     nameKo: "절제",
     arcana: "major",
     number: 14,
@@ -273,7 +273,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-15-devil",
-    name: "The Devil",
+    englishName: "The Devil",
     nameKo: "악마",
     arcana: "major",
     number: 15,
@@ -291,7 +291,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-16-tower",
-    name: "The Tower",
+    englishName: "The Tower",
     nameKo: "탑",
     arcana: "major",
     number: 16,
@@ -309,7 +309,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-17-star",
-    name: "The Star",
+    englishName: "The Star",
     nameKo: "별",
     arcana: "major",
     number: 17,
@@ -327,7 +327,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-18-moon",
-    name: "The Moon",
+    englishName: "The Moon",
     nameKo: "달",
     arcana: "major",
     number: 18,
@@ -345,7 +345,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-19-sun",
-    name: "The Sun",
+    englishName: "The Sun",
     nameKo: "태양",
     arcana: "major",
     number: 19,
@@ -363,7 +363,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-20-judgement",
-    name: "Judgement",
+    englishName: "Judgement",
     nameKo: "심판",
     arcana: "major",
     number: 20,
@@ -381,7 +381,7 @@ export const majorArcana: TarotCard[] = [
   },
   {
     id: "major-21-world",
-    name: "The World",
+    englishName: "The World",
     nameKo: "세계",
     arcana: "major",
     number: 21,

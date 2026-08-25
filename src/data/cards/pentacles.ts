@@ -1,9 +1,9 @@
-import type { TarotCard } from "../../types/tarot";
+import type { KoCardSource } from "../../types/tarot";
 
-export const pentacles: TarotCard[] = [
+export const pentacles: KoCardSource[] = [
   {
     id: "pentacles-01-ace",
-    name: "Ace of Pentacles",
+    englishName: "Ace of Pentacles",
     nameKo: "펜타클 에이스",
     arcana: "minor",
     suit: "pentacles",
@@ -20,7 +20,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-02",
-    name: "Two of Pentacles",
+    englishName: "Two of Pentacles",
     nameKo: "펜타클 2",
     arcana: "minor",
     suit: "pentacles",
@@ -37,7 +37,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-03",
-    name: "Three of Pentacles",
+    englishName: "Three of Pentacles",
     nameKo: "펜타클 3",
     arcana: "minor",
     suit: "pentacles",
@@ -54,7 +54,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-04",
-    name: "Four of Pentacles",
+    englishName: "Four of Pentacles",
     nameKo: "펜타클 4",
     arcana: "minor",
     suit: "pentacles",
@@ -71,7 +71,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-05",
-    name: "Five of Pentacles",
+    englishName: "Five of Pentacles",
     nameKo: "펜타클 5",
     arcana: "minor",
     suit: "pentacles",
@@ -88,7 +88,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-06",
-    name: "Six of Pentacles",
+    englishName: "Six of Pentacles",
     nameKo: "펜타클 6",
     arcana: "minor",
     suit: "pentacles",
@@ -105,7 +105,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-07",
-    name: "Seven of Pentacles",
+    englishName: "Seven of Pentacles",
     nameKo: "펜타클 7",
     arcana: "minor",
     suit: "pentacles",
@@ -122,7 +122,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-08",
-    name: "Eight of Pentacles",
+    englishName: "Eight of Pentacles",
     nameKo: "펜타클 8",
     arcana: "minor",
     suit: "pentacles",
@@ -139,7 +139,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-09",
-    name: "Nine of Pentacles",
+    englishName: "Nine of Pentacles",
     nameKo: "펜타클 9",
     arcana: "minor",
     suit: "pentacles",
@@ -156,7 +156,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-10",
-    name: "Ten of Pentacles",
+    englishName: "Ten of Pentacles",
     nameKo: "펜타클 10",
     arcana: "minor",
     suit: "pentacles",
@@ -173,7 +173,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-11-page",
-    name: "Page of Pentacles",
+    englishName: "Page of Pentacles",
     nameKo: "펜타클 페이지",
     arcana: "minor",
     suit: "pentacles",
@@ -190,7 +190,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-12-knight",
-    name: "Knight of Pentacles",
+    englishName: "Knight of Pentacles",
     nameKo: "펜타클 기사",
     arcana: "minor",
     suit: "pentacles",
@@ -207,7 +207,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-13-queen",
-    name: "Queen of Pentacles",
+    englishName: "Queen of Pentacles",
     nameKo: "펜타클 여왕",
     arcana: "minor",
     suit: "pentacles",
@@ -224,7 +224,7 @@ export const pentacles: TarotCard[] = [
   },
   {
     id: "pentacles-14-king",
-    name: "King of Pentacles",
+    englishName: "King of Pentacles",
     nameKo: "펜타클 왕",
     arcana: "minor",
     suit: "pentacles",

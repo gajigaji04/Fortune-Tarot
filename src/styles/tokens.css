@@ -30,7 +30,11 @@
   /* Typography */
   --font-display: "Cinzel", "Noto Serif KR", serif;
   --font-body-en: "EB Garamond", "Cormorant Garamond", serif;
-  --font-body: "Noto Serif KR", "EB Garamond", serif;
+  /* Swapped per active UI language via [data-lang] below, so CJK text always
+     renders with the correct regional glyph shapes instead of falling back
+     through whichever Noto Serif variant happens to have *a* glyph. */
+  --font-cjk: "Noto Serif KR", serif;
+  --font-body: var(--font-cjk), "EB Garamond", serif;
 
   /* Sizing */
   --radius-sm: 2px;
@@ -47,11 +51,27 @@
   --shadow-card: 0 6px 18px rgba(8, 4, 1, 0.55);
   --shadow-soft: 0 2px 10px rgba(8, 4, 1, 0.35);
 
+  /* Traditional tarot card proportions (~2.75in x 4.75in), used everywhere a
+     card-shaped box is sized so the shape is only ever defined in one place. */
+  --card-aspect: 7 / 12;
+
   --duration-flip: 640ms;
   --duration-shuffle: 1600ms;
   --ease-flip: cubic-bezier(0.35, 0.05, 0.25, 1);
 
   --content-max-width: 74rem;
+}
+
+[data-lang="ja"] {
+  --font-cjk: "Noto Serif JP", serif;
+}
+
+[data-lang="zh"] {
+  --font-cjk: "Noto Serif SC", serif;
+}
+
+[data-lang="en"] {
+  --font-cjk: "EB Garamond", serif;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -2,10 +2,10 @@ import { useCallback, useState } from "react";
 import type { ReadingRecord } from "../types/tarot";
 import { createId } from "../utils/id";
 
-const STORAGE_KEY = "the-arcana:reading-history";
+const STORAGE_KEY = "the-arcana:vault";
 const MAX_ENTRIES = 20;
 
-function readHistory(): ReadingRecord[] {
+function readVault(): ReadingRecord[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return [];
@@ -16,16 +16,16 @@ function readHistory(): ReadingRecord[] {
   }
 }
 
-function writeHistory(records: ReadingRecord[]) {
+function writeVault(records: ReadingRecord[]) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
   } catch {
-    // localStorage unavailable (e.g. private browsing quota) -- history simply won't persist.
+    // localStorage unavailable (e.g. private browsing quota) -- the vault simply won't persist.
   }
 }
 
-export function useReadingHistory() {
-  const [history, setHistory] = useState<ReadingRecord[]>(() => readHistory());
+export function useVault() {
+  const [history, setHistory] = useState<ReadingRecord[]>(() => readVault());
 
   const addReading = useCallback((record: Omit<ReadingRecord, "id" | "createdAt">) => {
     const entry: ReadingRecord = {
@@ -35,7 +35,7 @@ export function useReadingHistory() {
     };
     setHistory((prev) => {
       const next = [entry, ...prev].slice(0, MAX_ENTRIES);
-      writeHistory(next);
+      writeVault(next);
       return next;
     });
     return entry;
@@ -44,14 +44,14 @@ export function useReadingHistory() {
   const removeReading = useCallback((id: string) => {
     setHistory((prev) => {
       const next = prev.filter((record) => record.id !== id);
-      writeHistory(next);
+      writeVault(next);
       return next;
     });
   }, []);
 
   const clearHistory = useCallback(() => {
     setHistory([]);
-    writeHistory([]);
+    writeVault([]);
   }, []);
 
   return { history, addReading, removeReading, clearHistory };

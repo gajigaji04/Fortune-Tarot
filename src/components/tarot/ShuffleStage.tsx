@@ -1,7 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { CardBack } from "./cardArt/CardBack";
 import styles from "./ShuffleStage.module.css";
 
 export function ShuffleStage() {
+  const { t } = useTranslation();
   return (
     <div className={styles.wrapper} role="status" aria-live="polite">
       <div className={styles.deck} aria-hidden="true">
@@ -15,7 +17,7 @@ export function ShuffleStage() {
           <CardBack />
         </div>
       </div>
-      <p className={styles.text}>카드를 섞고 있습니다...</p>
+      <p className={styles.text}>{t("reading.shufflingText")}</p>
     </div>
   );
 }

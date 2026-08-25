@@ -1,27 +1,78 @@
 .footer {
   margin-top: var(--space-8);
   border-top: 1px solid var(--color-border-dark);
-  padding: var(--space-6) 0;
+  padding: var(--space-7) 0 var(--space-6);
   color: var(--color-text-on-dark-dim);
 }
 
-.inner {
+.grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 1fr;
+  padding-bottom: var(--space-6);
+}
+
+.brandCol .mark {
+  font-family: var(--font-display);
+  letter-spacing: 0.14em;
+  color: var(--color-gold-bright);
+  font-size: 1rem;
+  margin-bottom: var(--space-2);
+}
+
+.brandCol .tagline {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  max-width: 22rem;
+  margin: 0;
+}
+
+.colHeading {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-on-dark);
+  margin-bottom: var(--space-3);
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--space-2);
-  text-align: center;
 }
 
-.mark {
-  font-family: var(--font-display);
-  letter-spacing: 0.2em;
-  color: var(--color-gold-dim);
-  font-size: 0.85rem;
+.linkList a {
+  color: var(--color-text-on-dark-dim);
+  text-decoration: none;
+  font-size: 0.88rem;
 }
 
-.note {
+.linkList a:hover {
+  color: var(--color-gold-bright);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-dark);
   font-size: 0.8rem;
-  max-width: 34rem;
-  line-height: 1.7;
+}
+
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
 }

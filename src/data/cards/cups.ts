@@ -1,9 +1,9 @@
-import type { TarotCard } from "../../types/tarot";
+import type { KoCardSource } from "../../types/tarot";
 
-export const cups: TarotCard[] = [
+export const cups: KoCardSource[] = [
   {
     id: "cups-01-ace",
-    name: "Ace of Cups",
+    englishName: "Ace of Cups",
     nameKo: "컵 에이스",
     arcana: "minor",
     suit: "cups",
@@ -20,7 +20,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-02",
-    name: "Two of Cups",
+    englishName: "Two of Cups",
     nameKo: "컵 2",
     arcana: "minor",
     suit: "cups",
@@ -37,7 +37,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-03",
-    name: "Three of Cups",
+    englishName: "Three of Cups",
     nameKo: "컵 3",
     arcana: "minor",
     suit: "cups",
@@ -54,7 +54,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-04",
-    name: "Four of Cups",
+    englishName: "Four of Cups",
     nameKo: "컵 4",
     arcana: "minor",
     suit: "cups",
@@ -71,7 +71,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-05",
-    name: "Five of Cups",
+    englishName: "Five of Cups",
     nameKo: "컵 5",
     arcana: "minor",
     suit: "cups",
@@ -88,7 +88,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-06",
-    name: "Six of Cups",
+    englishName: "Six of Cups",
     nameKo: "컵 6",
     arcana: "minor",
     suit: "cups",
@@ -105,7 +105,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-07",
-    name: "Seven of Cups",
+    englishName: "Seven of Cups",
     nameKo: "컵 7",
     arcana: "minor",
     suit: "cups",
@@ -122,7 +122,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-08",
-    name: "Eight of Cups",
+    englishName: "Eight of Cups",
     nameKo: "컵 8",
     arcana: "minor",
     suit: "cups",
@@ -139,7 +139,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-09",
-    name: "Nine of Cups",
+    englishName: "Nine of Cups",
     nameKo: "컵 9",
     arcana: "minor",
     suit: "cups",
@@ -156,7 +156,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-10",
-    name: "Ten of Cups",
+    englishName: "Ten of Cups",
     nameKo: "컵 10",
     arcana: "minor",
     suit: "cups",
@@ -173,7 +173,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-11-page",
-    name: "Page of Cups",
+    englishName: "Page of Cups",
     nameKo: "컵 페이지",
     arcana: "minor",
     suit: "cups",
@@ -190,7 +190,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-12-knight",
-    name: "Knight of Cups",
+    englishName: "Knight of Cups",
     nameKo: "컵 기사",
     arcana: "minor",
     suit: "cups",
@@ -207,7 +207,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-13-queen",
-    name: "Queen of Cups",
+    englishName: "Queen of Cups",
     nameKo: "컵 여왕",
     arcana: "minor",
     suit: "cups",
@@ -224,7 +224,7 @@ export const cups: TarotCard[] = [
   },
   {
     id: "cups-14-king",
-    name: "King of Cups",
+    englishName: "King of Cups",
     nameKo: "컵 왕",
     arcana: "minor",
     suit: "cups",

@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.questionBanner {
+  text-align: center;
+  max-width: 34rem;
+}
+
+.questionLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 0.3em;
+}
+
+.questionText {
+  font-family: var(--font-body-en);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-text-on-dark);
+}

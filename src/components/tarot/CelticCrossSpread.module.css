@@ -45,7 +45,20 @@
   max-width: 22rem;
 }
 
-@media (min-width: 780px) {
+/*
+ * The traditional crossed layout (obstacle card overlapping present at 90deg)
+ * needs real breathing room, so it's reserved for desktop. Tablets keep the
+ * same simple, non-overlapping vertical read as mobile -- just wider, so the
+ * cards themselves are bigger rather than crowded into a cramped grid.
+ */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .cross,
+  .staff {
+    max-width: 28rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .wrapper {
     flex-direction: row;
     align-items: center;
@@ -65,10 +78,6 @@
   .cross .slot {
     width: 100%;
     position: relative;
-  }
-
-  .pObstacleSlot {
-    grid-area: 1 / 1 / 2 / 2;
   }
 
   .pPast {

@@ -1,0 +1,171 @@
+{
+  "site": {
+    "name": "THE ARCANA",
+    "nameLocalized": "THE ARCANA"
+  },
+  "common": {
+    "save": "Save to Vault",
+    "saved": "Saved",
+    "delete": "Delete",
+    "deleteAll": "Clear Vault",
+    "deleteAllConfirm": "Delete every reading saved in your vault?",
+    "back": "Back",
+    "loading": "Loading...",
+    "language": "Language"
+  },
+  "nav": {
+    "browse": "Read Tarot",
+    "today": "Today's Fortune",
+    "learn": "Learn Tarot",
+    "cards": "Card Meanings",
+    "vault": "Vault",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "home": {
+    "eyebrow": "An Old European Tarot Salon",
+    "title": "Lay Out the Cards",
+    "subtitle": "78 cards that mirror your fate. Light a candle at the old desk, and hear the story you need today.",
+    "ctaToday": "Draw Today's Fortune",
+    "ctaCatalog": "Explore Card Meanings",
+    "chooseTitle": "What would you like to know?",
+    "chooseSubtitle": "Choose a reading, then decide how many cards to draw and what to ask, before choosing your own cards.",
+    "threeCard": "3-Card Reading",
+    "threeCardDesc": "Three cards -- past, present, future, and more.",
+    "aboutTitle": "What This Salon Offers",
+    "about1Title": "A Complete 78-Card Deck",
+    "about1Desc": "All 22 Major and 56 Minor Arcana cards, each with upright and reversed meanings.",
+    "about2Title": "You Choose Your Own Cards",
+    "about2Desc": "Nothing is drawn automatically. Pick your own cards from the spread deck laid before you.",
+    "about3Title": "Kept in This Browser Only",
+    "about3Desc": "Readings you save are kept on this device only, with no login required, ready whenever you return."
+  },
+  "reading": {
+    "positionsPreviewTitle": "Positions in This Spread",
+    "countLabel": "How many cards would you like to draw?",
+    "countUnit": "{{count}}",
+    "threeVariantLabel": "3-Card Layout",
+    "modeLabel": "How would you like to view it?",
+    "modeDrawOnlyTitle": "Cards Only",
+    "modeDrawOnlyDesc": "See only the cards and their orientation. Interpret them yourself.",
+    "modeInterpretTitle": "With Interpretation",
+    "modeInterpretDesc": "See each card's meaning plus an overall reading.",
+    "questionLabel": "Question",
+    "questionOptional": "(optional)",
+    "questionPlaceholder": "e.g. Will I find a new job this month? / How will things go with this person?",
+    "startButton": "Begin Shuffling",
+    "shufflingText": "Shuffling the cards...",
+    "selectIntro": "Hold your question in mind, then choose your cards.",
+    "selectInstruction": "Choose {{count}} cards.",
+    "selectProgress": "{{picked}} / {{total}} chosen",
+    "selectedTrayLabel": "Your Chosen Cards",
+    "poolLabel": "The Deck",
+    "pickCardAria": "Choose this card",
+    "emptySlotAria": "Not yet chosen",
+    "viewResultButton": "Reveal Your Reading",
+    "resultQuestionLabel": "Question",
+    "resetButton": "Draw Again",
+    "cardByCard": "Card-by-Card Reading",
+    "overallSynthesis": "Overall Reading",
+    "positionCardAria": "{{position}}, {{name}}, {{orientation}}",
+    "upright": "Upright",
+    "reversed": "Reversed",
+    "positionReadTemplate": "In the {{position}} position, {{name}} ({{orientation}}) appeared. {{body}}",
+    "synthesisOpeningWithQuestion": "For the question \"{{question}}\", your {{topic}} reading unfolds as follows.",
+    "synthesisOpening": "Your {{topic}} reading unfolds as follows.",
+    "synthesisMajorHeavy": "With several Major Arcana cards appearing, this moment seems tied less to small daily matters and more to an important turning point in your life.",
+    "synthesisAllMinor": "With mostly Minor Arcana cards appearing, concrete everyday choices and attitudes -- rather than dramatic events -- are shaping this flow.",
+    "synthesisReversedHeavy": "With reversed cards standing out, it's worth paying attention to what's still settling beneath the surface, or moving more slowly than expected, rather than what's plainly visible.",
+    "synthesisAllUpright": "With every card upright, the current flow is relatively smooth and its direction is clearly visible.",
+    "synthesisFlow": "The flow that began with {{firstName}} in the {{firstPosition}} position leads into {{lastName}} in the {{lastPosition}} position. Take a moment to consider each card in its place, and what you truly need right now."
+  },
+  "threeVariant": {
+    "general": "Past · Present · Future",
+    "choice": "Situation · Choice A · Choice B",
+    "relationship": "You · The Other · The Relationship"
+  },
+  "catalog": {
+    "filterAll": "All",
+    "filterMajor": "Major Arcana",
+    "filterWands": "Wands",
+    "filterCups": "Cups",
+    "filterSwords": "Swords",
+    "filterPentacles": "Pentacles",
+    "viewDetailAria": "View {{name}} card details"
+  },
+  "cardsPage": {
+    "title": "Tarot Card Meanings",
+    "description": "Choose a card to explore its upright and reversed meaning in depth.",
+    "majorHeading": "Major Arcana",
+    "minorHeading": "Minor Arcana"
+  },
+  "cardMeaning": {
+    "symbolHeading": "What This Card Symbolizes"
+  },
+  "detail": {
+    "back": "Back to the list",
+    "arcanaMajor": "Major Arcana",
+    "arcanaMinor": "Minor Arcana",
+    "suitWands": "Wands",
+    "suitCups": "Cups",
+    "suitSwords": "Swords",
+    "suitPentacles": "Pentacles",
+    "uprightTitle": "Upright",
+    "reversedTitle": "Reversed"
+  },
+  "vault": {
+    "title": "Vault",
+    "description": "Revisit tarot readings you've saved. They are not visible on other devices or browsers.",
+    "empty": "Nothing saved to your vault yet. View a reading and save the result to keep it here.",
+    "viewResult": "View Result",
+    "deleteConfirmQuestion": "Delete this reading from your vault?",
+    "cancel": "Cancel",
+    "savedToVault": "Saved to your vault.",
+    "back": "Back to the vault"
+  },
+  "learn": {
+    "title": "Learn Tarot",
+    "description": "A short guide for those new to tarot.",
+    "cardsTitle": "What Is a Tarot Card?",
+    "cardsBody": "Tarot is a symbolic system of 78 cards. The 22 Major Arcana show the large turning points of life, while the 56 Minor Arcana (Wands, Cups, Swords, Pentacles) show concrete everyday situations and feelings.",
+    "orientationTitle": "Upright and Reversed",
+    "orientationBody": "The same card drawn upright tends to show its meaning clearly and smoothly, while reversed it often means that meaning is held inward, delayed, or expressed differently. Reversed does not automatically mean something bad.",
+    "spreadTitle": "What Is a Spread?",
+    "spreadBody": "A spread is the way cards are laid out and the meaning given to each position. The same card is read differently in a \"Past\" position than in an \"Advice\" position.",
+    "usageTitle": "How to Use This Site",
+    "usageStep1": "Choose a reading from the home page or the top menu.",
+    "usageStep2": "Decide how many cards to draw and, if you like, write down your question.",
+    "usageStep3": "Choose between \"Cards Only\" and \"With Interpretation\".",
+    "usageStep4": "Choose your own cards from the deck laid out before you.",
+    "usageStep5": "If you like the result, save it and revisit it later in your \"Vault\"."
+  },
+  "footer": {
+    "tagline": "A quiet moment to reflect, with the tarot as your guide.",
+    "exploreHeading": "Explore",
+    "legalHeading": "Information",
+    "languageHeading": "Language",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© {{year}} THE ARCANA"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "body1": "This site runs entirely in your browser, with no server. Your questions, drawn cards, and reading history are stored only in this browser's local storage and are never sent elsewhere.",
+    "body2": "There is no sign-up or login, so we do not collect personal information such as email addresses or passwords. Clearing your browser storage also clears your saved readings.",
+    "body3": "Your language preference is kept in the same local storage so it is remembered on your next visit."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "body1": "THE ARCANA is a tarot reading service intended for entertainment and self-reflection. Its interpretations are not a substitute for professional legal, medical, or financial advice -- please consult a professional for important decisions.",
+    "body2": "The card illustrations, text, and design on this site are original content.",
+    "body3": "The service may change or be discontinued without prior notice."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The card you're looking for doesn't seem to be in this deck.",
+    "backHome": "Return Home"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
+  }
+}

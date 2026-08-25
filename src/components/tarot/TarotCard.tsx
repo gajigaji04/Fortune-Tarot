@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import type { Orientation, TarotCard as TarotCardType } from "../../types/tarot";
+import { useLang } from "../../hooks/useLang";
+import { getLocalized } from "../../utils/i18n";
 import { CardBack } from "./cardArt/CardBack";
 import { CardFace } from "./cardArt/CardFace";
 import styles from "./TarotCard.module.css";
@@ -21,6 +24,8 @@ export function TarotCard({
   onReveal,
   showOrientationLabel = true,
 }: TarotCardProps) {
+  const { t } = useTranslation();
+  const lang = useLang();
   const [justRevealed, setJustRevealed] = useState(false);
   const wasRevealed = useRef(revealed);
 
@@ -34,7 +39,7 @@ export function TarotCard({
     wasRevealed.current = revealed;
   }, [revealed]);
 
-  const orientationText = orientation === "upright" ? "정방향" : "역방향";
+  const orientationText = t(orientation === "upright" ? "reading.upright" : "reading.reversed");
   const isInteractive = !revealed && Boolean(onReveal);
 
   const flipperClassName = [
@@ -49,9 +54,14 @@ export function TarotCard({
     .filter(Boolean)
     .join(" ");
 
+  const localizedName = getLocalized(card.name, lang);
   const ariaLabel = revealed
-    ? `${card.name}(${card.nameKo}), ${orientationText}${positionName ? `, ${positionName} 자리` : ""}`
-    : `${positionName ? `${positionName} 자리의 ` : ""}카드 뒤집기`;
+    ? t("reading.positionCardAria", {
+        position: positionName ?? "",
+        name: `${localizedName} (${card.englishName})`,
+        orientation: orientationText,
+      })
+    : t("reading.pickCardAria");
 
   return (
     <div className={styles.wrapper}>

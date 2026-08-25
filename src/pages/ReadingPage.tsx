@@ -1,73 +1,112 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams, useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "../components/common/Button";
 import { Divider } from "../components/common/Divider";
 import { QuestionInput } from "../components/tarot/QuestionInput";
 import { ModeToggle } from "../components/tarot/ModeToggle";
+import { CardCountSelector } from "../components/tarot/CardCountSelector";
 import { ShuffleStage } from "../components/tarot/ShuffleStage";
-import { Spread } from "../components/tarot/Spread";
-import { CelticCrossSpread } from "../components/tarot/CelticCrossSpread";
-import { InterpretationPanel } from "../components/tarot/InterpretationPanel";
-import { useTarotDraw } from "../hooks/useTarotDraw";
-import { useReadingHistory } from "../hooks/useReadingHistory";
+import { CardSelectionBoard } from "../components/tarot/CardSelectionBoard";
+import { ReadingResultView } from "../components/tarot/ReadingResultView";
+import { useCardSelection } from "../hooks/useCardSelection";
+import { useVault } from "../hooks/useVault";
 import { useReducedMotion } from "../hooks/useReducedMotion";
-import { getSpreadById, threeCardSpreadIds } from "../data/spreads";
-import type { ReadingMode } from "../types/tarot";
+import { useLang } from "../hooks/useLang";
+import { getLocalized } from "../utils/i18n";
+import { getTopicById } from "../data/topics";
+import { THREE_CARD_VARIANTS, layoutForCount, resolvePositions } from "../data/positionTemplates";
+import { CARD_COUNTS, type CardCount, type ReadingMode } from "../types/tarot";
 import styles from "./ReadingPage.module.css";
 
-type Stage = "setup" | "shuffle" | "draw" | "result";
+type Stage = "setup" | "shuffle" | "select" | "result";
 
-const THREE_CARD_LABELS: Record<string, string> = {
-  "three-general": "과거·현재·미래",
-  "three-choice": "선택 A / B",
-  "three-relationship": "관계",
-};
+const REVEAL_STAGGER_MS = 450;
+
+function parseCount(raw: string | null): CardCount | null {
+  const n = Number(raw);
+  return CARD_COUNTS.includes(n as CardCount) ? (n as CardCount) : null;
+}
 
 export function ReadingPage() {
-  const { spreadId = "" } = useParams();
-  const spread = getSpreadById(spreadId);
-  const { drawnCards, revealedIds, draw, reveal, reset, allRevealed } = useTarotDraw();
-  const { addReading } = useReadingHistory();
+  const { topicId = "" } = useParams();
+  const [searchParams] = useSearchParams();
+  const topic = getTopicById(topicId);
+  const { t } = useTranslation();
+  const lang = useLang();
+  const { pool, selections, start, pick, reset } = useCardSelection();
+  const { addReading } = useVault();
   const reducedMotion = useReducedMotion();
 
   const [stage, setStage] = useState<Stage>("setup");
+  const [count, setCount] = useState<CardCount>(topic?.defaultCount ?? 1);
+  const [threeVariantId, setThreeVariantId] = useState(THREE_CARD_VARIANTS[0].id);
   const [question, setQuestion] = useState("");
   const [mode, setMode] = useState<ReadingMode>("interpret");
   const [saved, setSaved] = useState(false);
+  const [revealedCount, setRevealedCount] = useState(0);
 
   useEffect(() => {
     setStage("setup");
+    setCount(parseCount(searchParams.get("count")) ?? topic?.defaultCount ?? 1);
+    setThreeVariantId(THREE_CARD_VARIANTS[0].id);
     setQuestion("");
     setMode("interpret");
     setSaved(false);
+    setRevealedCount(0);
     reset();
-  }, [spreadId, reset]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [topicId]);
 
   useEffect(() => {
-    if (stage !== "shuffle" || !spread) return;
-    const timer = window.setTimeout(() => {
-      draw(spread);
-      setStage("draw");
-    }, reducedMotion ? 250 : 1700);
+    if (stage !== "shuffle") return;
+    const timer = window.setTimeout(
+      () => {
+        start();
+        setStage("select");
+      },
+      reducedMotion ? 250 : 1700
+    );
     return () => window.clearTimeout(timer);
-  }, [stage, spread, draw, reducedMotion]);
+  }, [stage, start, reducedMotion]);
 
-  if (!spread) {
+  useEffect(() => {
+    if (stage !== "result") return;
+    if (reducedMotion) {
+      setRevealedCount(selections.length);
+      return;
+    }
+    setRevealedCount(0);
+    let revealed = 0;
+    const timer = window.setInterval(() => {
+      revealed += 1;
+      setRevealedCount(revealed);
+      if (revealed >= selections.length) window.clearInterval(timer);
+    }, REVEAL_STAGGER_MS);
+    return () => window.clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stage, reducedMotion]);
+
+  if (!topic) {
     return <Navigate to="/" replace />;
   }
 
+  const positions = resolvePositions(topic.id, count, threeVariantId);
+  const layout = layoutForCount(count);
+  const revealedIds = new Set(selections.slice(0, revealedCount).map((d) => d.position.id));
+  const selectionComplete = selections.length >= positions.length;
+
   const handleSave = () => {
-    if (!drawnCards) return;
     addReading({
-      spreadId: spread.id,
-      spreadName: spread.name,
+      topicId: topic.id,
+      count,
+      threeCardVariantId: count === 3 ? threeVariantId : undefined,
       question,
       mode,
-      cards: drawnCards.map((d) => ({
+      cards: selections.map((d) => ({
         cardId: d.card.id,
         orientation: d.orientation,
         positionId: d.position.id,
-        positionName: d.position.name,
       })),
     });
     setSaved(true);
@@ -76,114 +115,94 @@ export function ReadingPage() {
   const handleReset = () => {
     reset();
     setSaved(false);
+    setRevealedCount(0);
     setStage("setup");
   };
 
   return (
     <div className="container">
       <header className={styles.header}>
-        <h1 className={styles.spreadName}>{spread.name}</h1>
-        <p className={styles.spreadDesc}>{spread.description}</p>
+        <h1 className={styles.spreadName}>{getLocalized(topic.name, lang)}</h1>
+        <p className={styles.spreadDesc}>{getLocalized(topic.description, lang)}</p>
       </header>
 
       {stage === "setup" && (
         <div className={styles.setup}>
-          {threeCardSpreadIds.includes(spread.id as (typeof threeCardSpreadIds)[number]) && (
-            <div className={styles.variantTabs} role="tablist" aria-label="3장 타로 방식 선택">
-              {threeCardSpreadIds.map((id) => (
-                <Link
-                  key={id}
-                  to={`/reading/${id}`}
+          <CardCountSelector value={count} onChange={setCount} />
+
+          {count === 3 && (
+            <div className={styles.variantTabs} role="tablist" aria-label={t("reading.threeVariantLabel")}>
+              {THREE_CARD_VARIANTS.map((variant) => (
+                <button
+                  key={variant.id}
+                  type="button"
                   role="tab"
-                  aria-selected={id === spread.id}
-                  className={`${styles.variantTab} ${id === spread.id ? styles.variantTabActive : ""}`}
+                  aria-selected={variant.id === threeVariantId}
+                  className={`${styles.variantTab} ${variant.id === threeVariantId ? styles.variantTabActive : ""}`}
+                  onClick={() => setThreeVariantId(variant.id)}
                 >
-                  {THREE_CARD_LABELS[id]}
-                </Link>
+                  {getLocalized(variant.label, lang)}
+                </button>
               ))}
             </div>
           )}
 
           <div className={styles.positionsPreview}>
-            <h2>이 스프레드의 카드 자리</h2>
+            <h2>{t("reading.positionsPreviewTitle")}</h2>
             <ul className={styles.positionsList}>
-              {spread.positions.map((position, i) => (
+              {positions.map((position, i) => (
                 <li key={position.id}>
-                  <strong>{i + 1}. {position.name}</strong>
-                  <span>{position.description}</span>
+                  <strong>
+                    {i + 1}. {getLocalized(position.name, lang)}
+                  </strong>
+                  <span>{getLocalized(position.description, lang)}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <QuestionInput value={question} onChange={setQuestion} />
+          <QuestionInput value={question} onChange={setQuestion} placeholder={getLocalized(topic.defaultQuestion, lang)} />
           <ModeToggle value={mode} onChange={setMode} />
 
           <Button variant="primary" onClick={() => setStage("shuffle")}>
-            카드 섞기 시작
+            {t("reading.startButton")}
           </Button>
         </div>
       )}
 
       {stage === "shuffle" && <ShuffleStage />}
 
-      {stage === "draw" && drawnCards && (
-        <div className={styles.drawStage}>
-          <p className={styles.drawHint}>
-            카드를 하나씩 눌러 뒤집어 보세요. {allRevealed ? "모든 카드가 공개되었습니다." : ""}
-          </p>
-          {spread.layout === "celtic-cross" ? (
-            <CelticCrossSpread drawnCards={drawnCards} revealedIds={revealedIds} onReveal={reveal} />
-          ) : (
-            <Spread
-              layout={spread.layout as "single" | "row"}
-              drawnCards={drawnCards}
-              revealedIds={revealedIds}
-              onReveal={reveal}
-            />
-          )}
-          {allRevealed && (
-            <Button variant="primary" onClick={() => setStage("result")}>
-              결과 확인하기
-            </Button>
-          )}
+      {stage === "select" && pool && (
+        <div className={styles.selectStage}>
+          <CardSelectionBoard pool={pool} positions={positions} selections={selections} onPick={(card) => pick(card, positions)} />
+          <Button variant="primary" disabled={!selectionComplete} onClick={() => setStage("result")}>
+            {t("reading.viewResultButton")}
+          </Button>
         </div>
       )}
 
-      {stage === "result" && drawnCards && (
+      {stage === "result" && (
         <div className={styles.resultStage}>
-          {question.trim() && (
-            <div className={styles.questionBanner}>
-              <p className={styles.questionLabel}>질문</p>
-              <p className={styles.questionText}>&ldquo;{question.trim()}&rdquo;</p>
-            </div>
-          )}
-
-          {spread.layout === "celtic-cross" ? (
-            <CelticCrossSpread drawnCards={drawnCards} revealedIds={revealedIds} />
-          ) : (
-            <Spread
-              layout={spread.layout as "single" | "row"}
-              drawnCards={drawnCards}
-              revealedIds={revealedIds}
-            />
-          )}
-
-          {mode === "interpret" && (
-            <InterpretationPanel drawnCards={drawnCards} spread={spread} question={question} />
-          )}
+          <ReadingResultView
+            topic={topic}
+            question={question}
+            mode={mode}
+            layout={layout}
+            drawnCards={selections}
+            revealedIds={revealedIds}
+          />
 
           <Divider />
 
           <div className={styles.resultActions}>
             <Button variant="outline" onClick={handleReset}>
-              다시 뽑기
+              {t("reading.resetButton")}
             </Button>
             <Button variant="primary" onClick={handleSave} disabled={saved}>
-              {saved ? "저장됨" : "결과 저장"}
+              {saved ? t("common.saved") : t("common.save")}
             </Button>
           </div>
-          {saved && <p className={styles.savedNote}>최근 기록에 저장되었습니다.</p>}
+          {saved && <p className={styles.savedNote}>{t("vault.savedToVault")}</p>}
         </div>
       )}
     </div>

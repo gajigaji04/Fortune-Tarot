@@ -1,14 +1,16 @@
+import { useTranslation } from "react-i18next";
 import { ButtonLink } from "../components/common/Button";
 
 export function NotFoundPage() {
+  const { t } = useTranslation();
   return (
     <div className="container" style={{ textAlign: "center", padding: "5rem 0" }}>
-      <h1>페이지를 찾을 수 없습니다</h1>
+      <h1>{t("notFound.title")}</h1>
       <p style={{ color: "var(--color-text-on-dark-dim)", marginBottom: "2rem" }}>
-        찾으시는 카드는 이 덱에 없는 것 같습니다.
+        {t("notFound.description")}
       </p>
       <ButtonLink to="/" variant="primary">
-        메인으로 돌아가기
+        {t("notFound.backHome")}
       </ButtonLink>
     </div>
   );

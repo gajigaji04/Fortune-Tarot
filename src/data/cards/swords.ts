@@ -1,9 +1,9 @@
-import type { TarotCard } from "../../types/tarot";
+import type { KoCardSource } from "../../types/tarot";
 
-export const swords: TarotCard[] = [
+export const swords: KoCardSource[] = [
   {
     id: "swords-01-ace",
-    name: "Ace of Swords",
+    englishName: "Ace of Swords",
     nameKo: "소드 에이스",
     arcana: "minor",
     suit: "swords",
@@ -20,7 +20,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-02",
-    name: "Two of Swords",
+    englishName: "Two of Swords",
     nameKo: "소드 2",
     arcana: "minor",
     suit: "swords",
@@ -37,7 +37,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-03",
-    name: "Three of Swords",
+    englishName: "Three of Swords",
     nameKo: "소드 3",
     arcana: "minor",
     suit: "swords",
@@ -54,7 +54,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-04",
-    name: "Four of Swords",
+    englishName: "Four of Swords",
     nameKo: "소드 4",
     arcana: "minor",
     suit: "swords",
@@ -71,7 +71,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-05",
-    name: "Five of Swords",
+    englishName: "Five of Swords",
     nameKo: "소드 5",
     arcana: "minor",
     suit: "swords",
@@ -88,7 +88,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-06",
-    name: "Six of Swords",
+    englishName: "Six of Swords",
     nameKo: "소드 6",
     arcana: "minor",
     suit: "swords",
@@ -105,7 +105,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-07",
-    name: "Seven of Swords",
+    englishName: "Seven of Swords",
     nameKo: "소드 7",
     arcana: "minor",
     suit: "swords",
@@ -122,7 +122,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-08",
-    name: "Eight of Swords",
+    englishName: "Eight of Swords",
     nameKo: "소드 8",
     arcana: "minor",
     suit: "swords",
@@ -139,7 +139,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-09",
-    name: "Nine of Swords",
+    englishName: "Nine of Swords",
     nameKo: "소드 9",
     arcana: "minor",
     suit: "swords",
@@ -156,7 +156,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-10",
-    name: "Ten of Swords",
+    englishName: "Ten of Swords",
     nameKo: "소드 10",
     arcana: "minor",
     suit: "swords",
@@ -173,7 +173,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-11-page",
-    name: "Page of Swords",
+    englishName: "Page of Swords",
     nameKo: "소드 페이지",
     arcana: "minor",
     suit: "swords",
@@ -190,7 +190,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-12-knight",
-    name: "Knight of Swords",
+    englishName: "Knight of Swords",
     nameKo: "소드 기사",
     arcana: "minor",
     suit: "swords",
@@ -207,7 +207,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-13-queen",
-    name: "Queen of Swords",
+    englishName: "Queen of Swords",
     nameKo: "소드 여왕",
     arcana: "minor",
     suit: "swords",
@@ -224,7 +224,7 @@ export const swords: TarotCard[] = [
   },
   {
     id: "swords-14-king",
-    name: "King of Swords",
+    englishName: "King of Swords",
     nameKo: "소드 왕",
     arcana: "minor",
     suit: "swords",

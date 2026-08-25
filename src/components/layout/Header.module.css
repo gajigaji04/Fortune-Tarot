@@ -59,6 +59,21 @@
   border-bottom-color: var(--color-gold-dim);
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.desktopLangSwitcher {
+  display: none;
+}
+
+.mobileLangSwitcher {
+  margin-top: var(--space-3);
+  justify-content: center;
+}
+
 .menuToggle {
   display: inline-flex;
   align-items: center;
@@ -85,6 +100,10 @@
 
 @media (min-width: 860px) {
   .nav {
+    display: flex;
+  }
+
+  .desktopLangSwitcher {
     display: flex;
   }
 
