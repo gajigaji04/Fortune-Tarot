@@ -1,0 +1,59 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 44px;
+  padding: 0.75em 1.6em;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border: 1px solid var(--color-gold-dim);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-on-dark);
+  cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+  position: relative;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: border-color 180ms ease;
+  pointer-events: none;
+}
+
+.button:hover,
+.button:focus-visible {
+  border-color: var(--color-gold-bright);
+  color: var(--color-gold-bright);
+}
+
+.button:hover::before,
+.button:focus-visible::before {
+  border-color: var(--color-gold-dim);
+}
+
+.primary {
+  background: linear-gradient(180deg, var(--color-gold-bright) 0%, var(--color-gold) 100%);
+  color: var(--color-text-on-gold);
+  border-color: var(--color-gold);
+}
+
+.primary:hover,
+.primary:focus-visible {
+  color: var(--color-text-on-gold);
+  border-color: var(--color-gold-bright);
+  filter: brightness(1.06);
+}
+
+.block {
+  display: flex;
+  width: 100%;
+}

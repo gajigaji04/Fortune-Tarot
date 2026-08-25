@@ -1,0 +1,126 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-text-on-dark-dim);
+  text-align: center;
+  margin: 0;
+}
+
+.captionIndex {
+  color: var(--color-gold-dim);
+  margin-right: 0.3em;
+}
+
+.cross {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 22rem;
+}
+
+.cross .slot {
+  width: 100%;
+}
+
+.staff {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 22rem;
+}
+
+/*
+ * The traditional crossed layout (obstacle card overlapping present at 90deg)
+ * needs real breathing room, so it's reserved for desktop. Tablets keep the
+ * same simple, non-overlapping vertical read as mobile -- just wider, so the
+ * cards themselves are bigger rather than crowded into a cramped grid.
+ */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .cross,
+  .staff {
+    max-width: 28rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+  }
+
+  .cross {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(84px, 128px));
+    grid-template-rows: repeat(3, minmax(120px, 190px));
+    gap: var(--space-4);
+    max-width: none;
+    width: auto;
+  }
+
+  .cross .slot {
+    width: 100%;
+    position: relative;
+  }
+
+  .pPast {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .pConscious {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: end;
+  }
+
+  .pPresent {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .pObstacle {
+    grid-area: 2 / 2 / 3 / 3;
+    align-self: center;
+    justify-self: center;
+    transform: rotate(90deg);
+    z-index: 2;
+    /* Rotating a tall card 90deg makes its layout box wide, which would
+       otherwise overlap and steal clicks from the past/near-future cards
+       beside it. Only the card button itself should stay clickable. */
+    pointer-events: none;
+  }
+
+  .pObstacle button {
+    pointer-events: auto;
+  }
+
+  .pUnconscious {
+    grid-area: 3 / 2 / 4 / 3;
+    align-self: start;
+  }
+
+  .pNearFuture {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+
+  .staff {
+    flex-direction: column-reverse;
+    max-width: 8.5rem;
+    width: auto;
+  }
+}

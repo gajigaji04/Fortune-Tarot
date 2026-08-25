@@ -1,0 +1,144 @@
+{
+  "site": {
+    "name": "THE ARCANA",
+    "nameLocalized": "阿卡纳塔罗"
+  },
+  "common": {
+    "delete": "删除",
+    "back": "返回",
+    "loading": "加载中...",
+    "language": "语言"
+  },
+  "nav": {
+    "browse": "占卜塔罗",
+    "learn": "使用说明",
+    "cards": "卡牌含义",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  },
+  "home": {
+    "eyebrow": "An Old European Tarot Salon",
+    "title": "展开属于你的卡牌",
+    "subtitle": "在心中默念你的问题,然后选择卡牌。",
+    "ctaToday": "占卜塔罗",
+    "chooseTitle": "你想知道什么?",
+    "topicsTitle": "您想看看哪种运势？"
+  },
+  "reading": {
+    "countLabel": "你想抽几张卡牌?",
+    "countUnit": "{{count}}张",
+    "threeVariantLabel": "三张牌的排列方式",
+    "modeLabel": "想以哪种方式查看?",
+    "modeDrawOnlyTitle": "仅看卡牌",
+    "modeDrawOnlyDesc": "只显示卡牌与方向,请你亲自解读。",
+    "modeInterpretTitle": "查看卡牌解读",
+    "modeInterpretDesc": "同时呈现每张卡牌的解读与整体的运势走向。",
+    "questionLabel": "问题",
+    "questionOptional": "(选填)",
+    "questionPlaceholder": "例如:这个月内能找到工作吗? / 我和这个人的关系会如何发展?",
+    "selectIntro": "请在心中默念问题,然后选择卡牌。",
+    "selectInstruction": "请选择{{count}}张卡牌。",
+    "selectProgress": "已选 {{picked}} / {{total}} 张",
+    "selectedTrayLabel": "已选卡牌",
+    "poolLabel": "卡牌堆",
+    "pickCardAria": "选择这张卡牌",
+    "emptySlotAria": "尚未选择的位置",
+    "continueButton": "去选牌",
+    "viewResultButton": "查看塔罗结果",
+    "resultQuestionLabel": "问题",
+    "resetButton": "重新抽牌",
+    "cardByCard": "逐牌解读",
+    "overallSynthesis": "综合解读",
+    "positionCardAria": "{{position}}位置,{{name}},{{orientation}}",
+    "upright": "正位",
+    "reversed": "逆位",
+    "positionReadTemplate": "在【{{position}}】的位置上，出现了{{name}}（{{orientation}}）。{{body}}",
+    "synthesisOpeningWithQuestion": "针对「{{question}}」这个问题，{{topic}}的占卜由此展开。",
+    "synthesisOpening": "{{topic}}的占卜由此展开。",
+    "synthesisMajorHeavy": "由于出现了多张大阿尔卡纳，此刻似乎与琐碎的日常无关，而是与人生中重要的转折点息息相关。",
+    "synthesisAllMinor": "由于牌面以小阿尔卡纳为主，比起重大事件，日常中具体的选择与态度正在塑造着这股走向。",
+    "synthesisReversedHeavy": "逆位牌较为突出，比起表面显而易见的部分，更需要留意内心尚未理清的流动，或是有所延迟的感受。",
+    "synthesisAllUpright": "所有牌都以正位出现，目前的走向相对顺畅，方向也十分清晰。",
+    "synthesisFlow": "从【{{firstPosition}}】的{{firstName}}开始的走向，延续到了【{{lastPosition}}】的{{lastName}}。请逐一细看每张牌所在的位置，慢慢体会此刻你真正需要的是什么。",
+    "meaningHeading": "{{orientation}}含义"
+  },
+  "threeVariant": {
+    "general": "过去 · 现在 · 未来",
+    "choice": "现状 · 选择A · 选择B",
+    "relationship": "我 · 对方 · 关系"
+  },
+  "catalog": {
+    "filterAll": "全部",
+    "filterMajor": "大阿尔卡纳",
+    "filterWands": "权杖",
+    "filterCups": "圣杯",
+    "filterSwords": "宝剑",
+    "filterPentacles": "钱币",
+    "viewDetailAria": "查看{{name}}卡牌详情"
+  },
+  "cardsPage": {
+    "title": "塔罗牌的含义",
+    "description": "选择一张卡牌,深入了解它的正位与逆位含义。",
+    "majorHeading": "大阿尔卡纳",
+    "minorHeading": "小阿尔卡纳"
+  },
+  "cardMeaning": {
+    "symbolHeading": "这张牌象征着什么"
+  },
+  "detail": {
+    "back": "返回列表",
+    "arcanaMajor": "大阿尔卡纳",
+    "arcanaMinor": "小阿尔卡纳",
+    "suitWands": "权杖",
+    "suitCups": "圣杯",
+    "suitSwords": "宝剑",
+    "suitPentacles": "钱币",
+    "uprightTitle": "正位",
+    "reversedTitle": "逆位"
+  },
+  "learn": {
+    "title": "使用说明",
+    "description": "为初次接触塔罗的朋友准备的简短指南。",
+    "cardsTitle": "什么是塔罗牌?",
+    "cardsBody": "塔罗是由78张卡牌组成的象征体系。22张大阿尔卡纳呈现人生的重大走向与转折点,56张小阿尔卡纳(权杖·圣杯·宝剑·钱币)则描绘日常生活中具体的处境与情感。",
+    "orientationTitle": "正位与逆位",
+    "orientationBody": "同一张卡牌,若以正位出现,其含义通常会较为顺利、清晰地展现;若以逆位出现,则往往意味着这份含义被压抑在内心、有所延迟,或以不同的方式呈现出来。逆位并不代表一定是坏的含义。",
+    "spreadTitle": "什么是牌阵?",
+    "spreadBody": "牌阵是指卡牌的排列方式,以及赋予每个位置的含义。同一张卡牌,落在“过去”的位置与落在“建议”的位置时,解读方式也会有所不同。",
+    "usageTitle": "本站使用方法",
+    "usageStep1": "在顶部菜单中选择「占卜塔罗」。",
+    "usageStep2": "选定想了解的主题、抽牌张数,以及「仅看卡牌」/「查看卡牌解读」的方式。",
+    "usageStep3": "试着写下你想了解的问题。(问题为选填项)",
+    "usageStep4": "从展开的牌堆中,亲手选出规定数量的卡牌。",
+    "usageStep5": "查看结果后,随时都可以带着新的问题再次占卜。"
+  },
+  "footer": {
+    "tagline": "与塔罗牌一同,回顾内心想法的时光。",
+    "exploreHeading": "浏览",
+    "legalHeading": "信息",
+    "languageHeading": "语言",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "copyright": "© {{year}} THE ARCANA"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "body1": "本网站没有独立的服务器,仅在浏览器中运行。你输入的问题、抽取的卡牌以及占卜记录,只会保存在你所使用设备的浏览器存储空间(localStorage)中,不会被传送至外部。",
+    "body2": "由于没有注册或登录流程,本站不会额外收集电子邮箱、密码等个人信息。清除浏览器存储空间时,保存的记录也会一并被删除。",
+    "body3": "语言设置也会保存在浏览器存储空间中,以便下次访问时保持不变。"
+  },
+  "terms": {
+    "title": "服务条款",
+    "body1": "THE ARCANA是一项以娱乐与自我省思为目的的塔罗占卜服务。所提供的卡牌解读并不能替代专业的法律、医疗或财务咨询,重要决定请务必与专业人士商议。",
+    "body2": "本网站的卡牌插图、文字内容及整体设计均为自制原创内容。",
+    "body3": "本服务可能在未事先通知的情况下发生变更或中止。"
+  },
+  "notFound": {
+    "title": "找不到该页面",
+    "description": "你要找的卡牌,似乎不在这副牌组之中。",
+    "backHome": "返回首页"
+  },
+  "a11y": {
+    "skipToContent": "跳至主要内容"
+  }
+}
