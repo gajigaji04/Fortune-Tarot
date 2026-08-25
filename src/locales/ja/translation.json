@@ -4,44 +4,27 @@
     "nameLocalized": "ジ・アルカナ"
   },
   "common": {
-    "save": "保管庫に保存",
-    "saved": "保存済み",
     "delete": "削除",
-    "deleteAll": "保管庫をすべて削除",
-    "deleteAllConfirm": "保管庫の記録をすべて削除しますか?",
     "back": "戻る",
     "loading": "読み込み中...",
     "language": "言語"
   },
   "nav": {
     "browse": "タロットを占う",
-    "today": "今日の運勢",
-    "learn": "タロットを学ぶ",
+    "learn": "ご案内",
     "cards": "カードの意味",
-    "vault": "保管庫",
     "openMenu": "メニューを開く",
     "closeMenu": "メニューを閉じる"
   },
   "home": {
     "eyebrow": "An Old European Tarot Salon",
-    "title": "カードを広げてみましょう",
-    "subtitle": "あなたの運命を映す78枚のカード。古びた机の上にろうそくを灯し、今日のあなたに必要な物語に耳を傾けてください。",
-    "ctaToday": "今日の運勢を見る",
-    "ctaCatalog": "カードの意味を見る",
+    "title": "あなたのカードを広げましょう",
+    "subtitle": "心の中で質問を思い浮かべ、カードを選んでください。",
+    "ctaToday": "タロットを占う",
     "chooseTitle": "何を知りたいですか?",
-    "chooseSubtitle": "占いの種類を選ぶと、カードの枚数や質問を決めて、自分でカードを選ぶことができます。",
-    "threeCard": "3枚タロット",
-    "threeCardDesc": "過去・現在・未来など、3枚のカードで読み解きます。",
-    "aboutTitle": "このサロンでできること",
-    "about1Title": "78枚の本格的なデッキ",
-    "about1Desc": "メジャー22枚とマイナー56枚すべてに、正位置と逆位置の解釈が用意されています。",
-    "about2Title": "カードは自分で選びます",
-    "about2Desc": "自動では引かれません。広げられたカードの中から、自分で好きなカードを選んでください。",
-    "about3Title": "記録はこのブラウザだけに",
-    "about3Desc": "保存したリーディングはログイン不要でこの端末にのみ保管され、いつでも見返すことができます。"
+    "topicsTitle": "どんな運勢が気になりますか？"
   },
   "reading": {
-    "positionsPreviewTitle": "このスプレッドのカード位置",
     "countLabel": "カードを何枚引きますか?",
     "countUnit": "{{count}}枚",
     "threeVariantLabel": "3枚配置の方式",
@@ -53,8 +36,6 @@
     "questionLabel": "質問",
     "questionOptional": "(任意)",
     "questionPlaceholder": "例: 今月中に就職できるでしょうか? / この人との関係はどうなるでしょうか?",
-    "startButton": "カードを混ぜる",
-    "shufflingText": "カードを混ぜています...",
     "selectIntro": "心の中で質問を思い浮かべてから、カードを選んでください。",
     "selectInstruction": "{{count}}枚のカードを選んでください。",
     "selectProgress": "{{picked}} / {{total}}枚選択",
@@ -62,6 +43,7 @@
     "poolLabel": "カードの山",
     "pickCardAria": "カードを選ぶ",
     "emptySlotAria": "まだ選ばれていない位置",
+    "continueButton": "カードを選びに進む",
     "viewResultButton": "タロットの結果を見る",
     "resultQuestionLabel": "質問",
     "resetButton": "もう一度引く",
@@ -77,7 +59,8 @@
     "synthesisAllMinor": "マイナーアルカナを中心にカードが出たことから、大きな出来事よりも、日常の中の具体的な選択や姿勢が流れをつくっていると言えます。",
     "synthesisReversedHeavy": "逆位置のカードが目立つことから、表にはっきりと現れるというよりも、心の中でまだ整理されている流れや、遅れている感覚に注意を向けてみる必要がありそうです。",
     "synthesisAllUpright": "すべてのカードが正位置で出たことから、今の流れは比較的順調で、その方向もはっきりと示されています。",
-    "synthesisFlow": "[{{firstPosition}}]の{{firstName}}から始まった流れは、[{{lastPosition}}]の{{lastName}}へとつながっていきます。カードが置かれたそれぞれの位置をひとつずつたどりながら、今のあなたに必要なものは何か、じっくりと感じ取ってみてください。"
+    "synthesisFlow": "[{{firstPosition}}]の{{firstName}}から始まった流れは、[{{lastPosition}}]の{{lastName}}へとつながっていきます。カードが置かれたそれぞれの位置をひとつずつたどりながら、今のあなたに必要なものは何か、じっくりと感じ取ってみてください。",
+    "meaningHeading": "{{orientation}}の意味"
   },
   "threeVariant": {
     "general": "過去・現在・未来",
@@ -113,18 +96,8 @@
     "uprightTitle": "正位置",
     "reversedTitle": "逆位置"
   },
-  "vault": {
-    "title": "保管庫",
-    "description": "保存したタロットの結果をあとから見返せます。他の端末やブラウザでは表示されません。",
-    "empty": "まだ保管庫に保存された結果がありません。結果を確認してから保存してみましょう。",
-    "viewResult": "結果を見る",
-    "deleteConfirmQuestion": "この記録を保管庫から削除しますか?",
-    "cancel": "キャンセル",
-    "savedToVault": "保管庫に保存されました。",
-    "back": "保管庫に戻る"
-  },
   "learn": {
-    "title": "タロットを学ぶ",
+    "title": "ご案内",
     "description": "タロットに初めて触れる方のための簡単なガイドです。",
     "cardsTitle": "タロットカードとは?",
     "cardsBody": "タロットは78枚のカードからなる象徴の体系です。22枚のメジャーアルカナは人生の大きな流れや転換点を、56枚のマイナーアルカナ(ワンド・カップ・ソード・ペンタクル)は日常の具体的な状況や感情を表します。",
@@ -133,11 +106,11 @@
     "spreadTitle": "スプレッドとは?",
     "spreadBody": "スプレッドとは、カードを並べる方法と、それぞれの位置(ポジション)に与えられた意味のことです。同じカードでも、「過去」の位置に置かれたときと「アドバイス」の位置に置かれたときとでは、読み方が変わります。",
     "usageTitle": "このサイトの使い方",
-    "usageStep1": "メイン画面や上部メニューから、希望する占いの種類を選びます。",
-    "usageStep2": "何枚のカードを引くかを決め、気になることを質問として書いてみましょう。(質問は任意です)",
-    "usageStep3": "「カードだけを見る」と「解釈付きで見る」から、好きな方法を選びます。",
+    "usageStep1": "上部メニューから「タロットを占う」を選びます。",
+    "usageStep2": "知りたいテーマとカードの枚数、「カードだけを見る」/「解釈付きで見る」を決めます。",
+    "usageStep3": "気になることを質問として書いてみましょう。(質問は任意です)",
     "usageStep4": "広げられたカードの中から、決められた枚数だけ自分でカードを選びます。",
-    "usageStep5": "結果が気に入ったら保存しておき、後で「保管庫」から見返すことができます。"
+    "usageStep5": "結果を確認したら、新しい質問でいつでもまた占うことができます。"
   },
   "footer": {
     "tagline": "タロットカードとともに、自分の思いを見つめ直すひととき。",

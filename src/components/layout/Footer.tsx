@@ -19,16 +19,13 @@ export function Footer() {
             <p className={styles.colHeading}>{t("footer.exploreHeading")}</p>
             <ul className={styles.linkList}>
               <li>
-                <Link to="/reading/general?count=1">{t("nav.today")}</Link>
+                <Link to="/tarot">{t("nav.browse")}</Link>
               </li>
               <li>
                 <Link to="/cards">{t("nav.cards")}</Link>
               </li>
               <li>
                 <Link to="/learn">{t("nav.learn")}</Link>
-              </li>
-              <li>
-                <Link to="/vault">{t("nav.vault")}</Link>
               </li>
             </ul>
           </div>

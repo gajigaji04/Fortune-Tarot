@@ -86,19 +86,3 @@ export interface DrawnCard {
   orientation: Orientation;
   position: SpreadPosition;
 }
-
-export interface ReadingRecord {
-  id: string;
-  createdAt: string;
-  topicId: string;
-  count: CardCount;
-  /** Only meaningful when count === 3. */
-  threeCardVariantId?: string;
-  question: string;
-  mode: ReadingMode;
-  cards: {
-    cardId: string;
-    orientation: Orientation;
-    positionId: string;
-  }[];
-}

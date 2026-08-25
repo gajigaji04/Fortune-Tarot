@@ -9,11 +9,9 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const NAV_ITEMS = [
-    { to: "/", label: t("nav.browse"), end: true },
-    { to: "/reading/general?count=1", label: t("nav.today") },
-    { to: "/learn", label: t("nav.learn") },
-    { to: "/cards", label: t("nav.cards") },
-    { to: "/vault", label: t("nav.vault") },
+    { to: "/tarot", label: t("nav.browse"), end: false },
+    { to: "/cards", label: t("nav.cards"), end: false },
+    { to: "/learn", label: t("nav.learn"), end: false },
   ];
 
   const linkClassName = ({ isActive }: { isActive: boolean }) =>

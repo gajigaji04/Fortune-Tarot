@@ -19,98 +19,69 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background:
-    radial-gradient(ellipse at 50% 0%, #f4ead2 0%, var(--color-parchment) 55%, var(--color-parchment-dim) 100%);
+  background: linear-gradient(180deg, var(--color-parchment) 0%, var(--color-parchment-dim) 100%);
   color: var(--color-wine-deep);
-  border: 1.5px solid var(--color-gold-dim);
+  border: 1px solid var(--color-border-light);
   box-sizing: border-box;
-  padding: 4cqw 5cqw;
 }
 
-.face::before {
-  content: "";
-  position: absolute;
-  inset: 5cqw;
-  border: 1px solid var(--color-gold-dim);
-  pointer-events: none;
-  opacity: 0.75;
-}
-
-.grain {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
-}
-
-.ornament {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--color-gold-dim);
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-.rank {
-  font-family: var(--font-display);
-  font-size: 4.6cqw;
-  letter-spacing: 0.12em;
-  color: var(--color-wine);
-  margin-top: 1cqw;
-}
-
-.medallion {
-  position: relative;
+.illustration {
   flex: 1;
-  width: 100%;
   min-height: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+  color: var(--color-wine);
+  font-size: 34cqw;
 }
 
 .majorIconWrap {
   position: absolute;
-  inset: 8%;
+  inset: 10%;
   color: var(--color-wine);
 }
 
-.pip {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  color: var(--color-wine);
-  font-size: 1em;
-}
-
-.courtCenter {
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  transform: translate(-50%, -50%);
+.minorIllustration,
+.courtIllustration {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4em;
-  color: var(--color-wine);
-  font-size: 5.6cqw;
+  gap: 0.12em;
+}
+
+.rankBadge {
+  font-family: var(--font-display);
+  font-size: 0.24em;
+  letter-spacing: 0.08em;
+  color: var(--color-wine-deep);
+}
+
+.courtIllustration {
+  font-size: 0.85em;
+}
+
+.caption {
+  border-top: 1px solid var(--color-border-light);
+  padding: 4cqw 3cqw;
+  text-align: center;
+  background: var(--color-parchment);
 }
 
 .name {
+  display: block;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 4cqw;
-  letter-spacing: 0.03em;
-  text-align: center;
-  line-height: 1.2;
-  margin-bottom: 1.5cqw;
+  font-size: 4.4cqw;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
 .nameKo {
+  display: block;
   font-family: var(--font-display);
-  font-size: 3.1cqw;
+  font-size: 3cqw;
   color: var(--color-ink-soft);
-  text-align: center;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
 }

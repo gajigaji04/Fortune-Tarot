@@ -6,6 +6,8 @@
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-sm);
   padding: var(--space-6) var(--space-5);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sectionTitle {
@@ -29,14 +31,39 @@
   font-family: var(--font-display);
   font-size: 0.95rem;
   color: var(--color-wine);
-  margin-bottom: 0.3em;
+  margin-bottom: 0.4em;
 }
 
 .cardLine {
   font-family: var(--font-body-en);
   font-style: italic;
   color: var(--color-ink-soft);
-  margin-bottom: 0.4em;
+  margin-bottom: 0.5em;
+}
+
+.orientationBadge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  padding: 0.15em 0.7em;
+  margin-left: 0.5em;
+  border-radius: 999px;
+  background: var(--color-wine);
+  color: var(--color-parchment);
+}
+
+.orientationBadge[data-reversed="true"] {
+  background: var(--color-gold-dim);
+  color: var(--color-ink);
+}
+
+.keywords {
+  font-size: 0.95rem;
+  color: var(--color-wine);
+  font-weight: 600;
+  margin: 0 0 0.5em;
 }
 
 .positionText {

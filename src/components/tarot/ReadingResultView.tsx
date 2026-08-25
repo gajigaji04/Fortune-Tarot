@@ -3,7 +3,7 @@ import type { DrawnCard, ReadingMode, SpreadLayout, Topic } from "../../types/ta
 import { Spread } from "./Spread";
 import { PentagonSpread } from "./PentagonSpread";
 import { CelticCrossSpread } from "./CelticCrossSpread";
-import { InterpretationPanel } from "./InterpretationPanel";
+import { CardResultDetails } from "./CardResultDetails";
 import styles from "./ReadingResultView.module.css";
 
 interface ReadingResultViewProps {
@@ -15,11 +15,7 @@ interface ReadingResultViewProps {
   revealedIds: Set<string>;
 }
 
-/**
- * The read-only "here is the spread and its interpretation" view. Shared by
- * ReadingPage (a reading just drawn, with a staggered reveal) and
- * VaultDetailPage (a saved reading, restored exactly as it was -- not redrawn).
- */
+/** The read-only "here is the spread and what it means" view shown by TarotPage's result stage. */
 export function ReadingResultView({ topic, question, mode, layout, drawnCards, revealedIds }: ReadingResultViewProps) {
   const { t } = useTranslation();
   const allRevealed = revealedIds.size >= drawnCards.length;
@@ -41,8 +37,8 @@ export function ReadingResultView({ topic, question, mode, layout, drawnCards, r
         <Spread layout={layout as "single" | "row"} drawnCards={drawnCards} revealedIds={revealedIds} showOrientationLabel />
       )}
 
-      {mode === "interpret" && allRevealed && (
-        <InterpretationPanel drawnCards={drawnCards} topic={topic} question={question} />
+      {allRevealed && (
+        <CardResultDetails drawnCards={drawnCards} topic={topic} question={question} mode={mode} />
       )}
     </div>
   );
