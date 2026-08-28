@@ -10,6 +10,7 @@ export function Header() {
 
   const NAV_ITEMS = [
     { to: "/tarot", label: t("nav.browse"), end: false },
+    { to: "/symbolon", label: t("nav.symbolon"), end: false },
     { to: "/cards", label: t("nav.cards"), end: false },
     { to: "/learn", label: t("nav.learn"), end: false },
   ];

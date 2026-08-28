@@ -1,0 +1,17 @@
+.single {
+  display: flex;
+  justify-content: center;
+  width: min(220px, 60vw);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.row > * {
+  width: clamp(96px, 26vw, 160px);
+}

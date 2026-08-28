@@ -1,35 +1,41 @@
 import { useCallback, useState } from "react";
-import { allCards } from "../data/cards";
 import { shuffle } from "../utils/shuffle";
-import { randomOrientation } from "../utils/orientation";
-import type { DrawnCard, SpreadPosition, TarotCard } from "../types/tarot";
+import type { SpreadPosition } from "../types/common";
 
-/** How many face-down cards are laid out for the user to choose from. */
-export const SELECTION_POOL_SIZE = 33;
+interface Identifiable {
+  id: string;
+}
 
-export function useCardSelection() {
-  const [pool, setPool] = useState<TarotCard[] | null>(null);
-  const [selections, setSelections] = useState<DrawnCard[]>([]);
+/**
+ * Selection engine shared by every card system (Tarot, Symbolon, ...): shuffle
+ * a deck into a face-down pool, let the user click cards one at a time to
+ * fill spread positions in order, and never offer the same card twice in one
+ * reading. The deck itself, and any per-pick extra data (Tarot's orientation;
+ * nothing for Symbolon), are supplied by the caller via `start` / `makeExtra`
+ * so this hook stays ignorant of any one system's domain data.
+ */
+export function useCardSelection<TCard extends Identifiable, TExtra extends object = Record<string, never>>(
+  makeExtra?: () => TExtra
+) {
+  const [pool, setPool] = useState<TCard[] | null>(null);
+  const [selections, setSelections] = useState<({ card: TCard; position: SpreadPosition } & TExtra)[]>([]);
 
-  const start = useCallback((poolSize: number = SELECTION_POOL_SIZE) => {
-    setPool(shuffle(allCards).slice(0, poolSize));
+  const start = useCallback((deck: readonly TCard[], poolSize: number) => {
+    setPool(shuffle(deck).slice(0, poolSize));
     setSelections([]);
   }, []);
 
-  /**
-   * The user picks a *card*, not an orientation -- the orientation is rolled
-   * at this exact moment, independent of which card or slot was clicked.
-   */
   const pick = useCallback(
-    (card: TarotCard, positions: SpreadPosition[]) => {
+    (card: TCard, positions: SpreadPosition[]) => {
       setSelections((prev) => {
         if (prev.length >= positions.length) return prev;
         const position = positions[prev.length];
-        return [...prev, { card, orientation: randomOrientation(), position }];
+        const extra = (makeExtra ? makeExtra() : {}) as TExtra;
+        return [...prev, { card, position, ...extra }];
       });
       setPool((prev) => (prev ? prev.filter((c) => c.id !== card.id) : prev));
     },
-    []
+    [makeExtra]
   );
 
   const reset = useCallback(() => {

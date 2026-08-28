@@ -1,0 +1,62 @@
+.setup {
+  padding: var(--space-6) 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  max-width: 30rem;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto var(--space-5);
+}
+
+.introTitle {
+  font-size: 1.15rem;
+  margin-bottom: 0.4em;
+}
+
+.introBody {
+  color: var(--color-text-on-dark-dim);
+  font-size: 0.92rem;
+}
+
+.settingsGroup {
+  max-width: 30rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.selectStage {
+  padding: var(--space-6) 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.selectActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resultStage {
+  padding: var(--space-6) 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.resultActions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
