@@ -11,6 +11,8 @@
   },
   "nav": {
     "browse": "タロットを占う",
+    "tarot": "タロット",
+    "symbolon": "シンボロン",
     "learn": "ご案内",
     "cards": "カードの意味",
     "openMenu": "メニューを開く",
@@ -21,8 +23,10 @@
     "title": "あなたのカードを広げましょう",
     "subtitle": "心の中で質問を思い浮かべ、カードを選んでください。",
     "ctaToday": "タロットを占う",
+    "ctaSymbolon": "シンボロンで見る",
     "chooseTitle": "何を知りたいですか?",
-    "topicsTitle": "どんな運勢が気になりますか？"
+    "topicsTitle": "どんな運勢が気になりますか？",
+    "symbolonTitle": "シンボロンで何を見てみましょうか？"
   },
   "reading": {
     "countLabel": "カードを何枚引きますか?",
@@ -84,6 +88,25 @@
   },
   "cardMeaning": {
     "symbolHeading": "カードが象徴するもの"
+  },
+  "symbolon": {
+    "pageTitle": "シンボロン",
+    "pageDescription": "タロットとは違う方法で、今の状況と内面の流れを見つめます。",
+    "chooseTitle": "何を見てみたいですか？",
+    "viewResultButton": "シンボロンの結果を見る",
+    "positionCardAria": "{{position}}の位置、{{name}}",
+    "positionReadTemplate": "「{{position}}」の位置には{{name}}のカードが出ました。{{body}}",
+    "synthesisOpeningWithQuestion": "「{{question}}」という質問について、{{readingType}}のリーディングが広がりました。",
+    "synthesisOpening": "{{readingType}}のリーディングが広がりました。",
+    "synthesisMultiCard": "複数のカードが一緒に現れていることから、ひとつの場面としてではなく、つながっていく流れとして読み取ってみてください。",
+    "synthesisFlow": "[{{firstPosition}}]の{{firstName}}から始まった流れは、[{{lastPosition}}]の{{lastName}}へとつながっていきます。カードが置かれたそれぞれの位置をひとつずつたどりながら、今のあなたに必要なものは何か、じっくりと感じ取ってみてください。",
+    "symbolHeading": "カードが象徴するもの",
+    "positionMeaningHeading": "このポジションでの意味",
+    "meaningHeading": "カードの意味",
+    "imagePlaceholder": "カード画像は準備中です",
+    "cardsPageTitle": "シンボロンカードの意味",
+    "cardsPageDescription": "カードを選んで、象徴と意味を詳しく見てみましょう。",
+    "totalCardsLabel": "全{{count}}枚"
   },
   "detail": {
     "back": "一覧に戻る",

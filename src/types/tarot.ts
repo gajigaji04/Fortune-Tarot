@@ -1,6 +1,6 @@
-export type Lang = "ko" | "ja" | "zh" | "en";
+import type { Localized, SpreadPosition } from "./common";
 
-export type Localized<T> = Record<Lang, T>;
+export type { Lang, Localized, ReadingMode, SpreadPosition } from "./common";
 
 export type Suit = "wands" | "cups" | "swords" | "pentacles";
 export type Arcana = "major" | "minor";
@@ -56,12 +56,6 @@ export const CARD_COUNTS: CardCount[] = [1, 3, 5, 10];
 
 export type SpreadLayout = "single" | "row" | "pentagon" | "celtic-cross";
 
-export interface SpreadPosition {
-  id: string;
-  name: Localized<string>;
-  description: Localized<string>;
-}
-
 /** A point-in-time question the user is exploring (career, love, ...). Card count is *not* fixed here. */
 export interface Topic {
   id: string;
@@ -78,8 +72,6 @@ export interface ThreeCardVariant {
   label: Localized<string>;
   positions: SpreadPosition[];
 }
-
-export type ReadingMode = "draw-only" | "interpret";
 
 export interface DrawnCard {
   card: TarotCard;
