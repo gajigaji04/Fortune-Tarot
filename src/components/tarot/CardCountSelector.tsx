@@ -1,13 +1,14 @@
 import { useTranslation } from "react-i18next";
-import { CARD_COUNTS, type CardCount } from "../../types/tarot";
 import styles from "./CardCountSelector.module.css";
 
-interface CardCountSelectorProps {
-  value: CardCount;
-  onChange: (count: CardCount) => void;
+interface CardCountSelectorProps<TCount extends number> {
+  counts: readonly TCount[];
+  value: TCount;
+  onChange: (count: TCount) => void;
 }
 
-export function CardCountSelector({ value, onChange }: CardCountSelectorProps) {
+/** Card-system-agnostic: which literal counts are offered is entirely up to the caller. */
+export function CardCountSelector<TCount extends number>({ counts, value, onChange }: CardCountSelectorProps<TCount>) {
   const { t } = useTranslation();
   return (
     <div className={styles.group}>
@@ -15,7 +16,7 @@ export function CardCountSelector({ value, onChange }: CardCountSelectorProps) {
         {t("reading.countLabel")}
       </span>
       <div className={styles.options} role="radiogroup" aria-labelledby="card-count-label">
-        {CARD_COUNTS.map((count) => (
+        {counts.map((count) => (
           <button
             key={count}
             type="button"

@@ -11,6 +11,8 @@
   },
   "nav": {
     "browse": "占卜塔罗",
+    "tarot": "塔罗",
+    "symbolon": "心灵图腾",
     "learn": "使用说明",
     "cards": "卡牌含义",
     "openMenu": "打开菜单",
@@ -21,8 +23,10 @@
     "title": "展开属于你的卡牌",
     "subtitle": "在心中默念你的问题,然后选择卡牌。",
     "ctaToday": "占卜塔罗",
+    "ctaSymbolon": "查看心灵图腾",
     "chooseTitle": "你想知道什么?",
-    "topicsTitle": "您想看看哪种运势？"
+    "topicsTitle": "您想看看哪种运势？",
+    "symbolonTitle": "心灵图腾能为你揭示什么？"
   },
   "reading": {
     "countLabel": "你想抽几张卡牌?",
@@ -84,6 +88,25 @@
   },
   "cardMeaning": {
     "symbolHeading": "这张牌象征着什么"
+  },
+  "symbolon": {
+    "pageTitle": "心灵图腾",
+    "pageDescription": "以不同于塔罗的方式，探索你此刻的处境与内心的流动。",
+    "chooseTitle": "你想探索什么？",
+    "viewResultButton": "查看心灵图腾结果",
+    "positionCardAria": "{{position}}位置，{{name}}",
+    "positionReadTemplate": "在【{{position}}】的位置上，出现了{{name}}。{{body}}",
+    "synthesisOpeningWithQuestion": "针对「{{question}}」这个问题，{{readingType}}的解读由此展开。",
+    "synthesisOpening": "{{readingType}}的解读由此展开。",
+    "synthesisMultiCard": "多张卡牌一同出现，请不要只看作单一的画面，而是把它们当作一段延续的走向来解读。",
+    "synthesisFlow": "从【{{firstPosition}}】的{{firstName}}开始的走向，延续到了【{{lastPosition}}】的{{lastName}}。请逐一细看每张牌所在的位置，慢慢体会此刻你真正需要的是什么。",
+    "symbolHeading": "这张牌象征着什么",
+    "positionMeaningHeading": "在此位置上的含义",
+    "meaningHeading": "卡牌的含义",
+    "imagePlaceholder": "卡牌图像制作中",
+    "cardsPageTitle": "心灵图腾卡牌含义",
+    "cardsPageDescription": "选择一张卡牌，深入了解它的象征与含义。",
+    "totalCardsLabel": "共 {{count}} 张"
   },
   "detail": {
     "back": "返回列表",

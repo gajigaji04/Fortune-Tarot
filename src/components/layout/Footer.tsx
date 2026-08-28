@@ -22,6 +22,9 @@ export function Footer() {
                 <Link to="/tarot">{t("nav.browse")}</Link>
               </li>
               <li>
+                <Link to="/symbolon">{t("nav.symbolon")}</Link>
+              </li>
+              <li>
                 <Link to="/cards">{t("nav.cards")}</Link>
               </li>
               <li>

@@ -3,49 +3,44 @@ import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "../components/common/Button";
 import { Divider } from "../components/common/Divider";
-import { TopicSelector } from "../components/tarot/TopicSelector";
+import { SymbolonReadingTypeSelector } from "../components/symbolon/SymbolonReadingTypeSelector";
 import { QuestionInput } from "../components/tarot/QuestionInput";
 import { ModeToggle } from "../components/tarot/ModeToggle";
 import { CardCountSelector } from "../components/tarot/CardCountSelector";
 import { CardSelectionBoard } from "../components/tarot/CardSelectionBoard";
-import { ReadingResultView } from "../components/tarot/ReadingResultView";
+import { SymbolonReadingResultView } from "../components/symbolon/SymbolonReadingResultView";
 import { useCardSelection } from "../hooks/useCardSelection";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 import { useLang } from "../hooks/useLang";
 import { getLocalized } from "../utils/i18n";
-import { randomOrientation } from "../utils/orientation";
-import { allCards } from "../data/cards";
-import { topics, getTopicById } from "../data/topics";
-import { THREE_CARD_VARIANTS, layoutForCount, resolvePositions } from "../data/positionTemplates";
-import { CARD_COUNTS } from "../types/tarot";
-import type { CardCount, Orientation, ReadingMode, TarotCard } from "../types/tarot";
-import styles from "./TarotPage.module.css";
+import { symbolonCards } from "../data/symbolon";
+import { symbolonReadingTypes, getSymbolonReadingTypeById } from "../data/symbolon/readingTypes";
+import { resolveSymbolonPositions } from "../data/symbolon/spreads";
+import { symbolonLayoutForCount, type SymbolonCardCount } from "../types/symbolon";
+import type { ReadingMode } from "../types/common";
+import styles from "./SymbolonPage.module.css";
 
 type Stage = "setup" | "select" | "result";
 
 const REVEAL_STAGGER_MS = 450;
-
 /** How many face-down cards are laid out for the user to choose from. */
 const SELECTION_POOL_SIZE = 33;
 
-export function TarotPage() {
+export function SymbolonPage() {
   const { t } = useTranslation();
   const lang = useLang();
   const [searchParams] = useSearchParams();
-  const { pool, selections, start, pick } = useCardSelection<TarotCard, { orientation: Orientation }>(() => ({
-    orientation: randomOrientation(),
-  }));
+  const { pool, selections, start, pick } = useCardSelection<(typeof symbolonCards)[number]>();
   const reducedMotion = useReducedMotion();
 
-  const [topicId, setTopicId] = useState(() => {
-    const requested = searchParams.get("topic");
-    return requested && getTopicById(requested) ? requested : topics[0].id;
+  const [readingTypeId, setReadingTypeId] = useState(() => {
+    const requested = searchParams.get("reading");
+    return requested && getSymbolonReadingTypeById(requested) ? requested : symbolonReadingTypes[0].id;
   });
-  const topic = getTopicById(topicId) ?? topics[0];
+  const readingType = getSymbolonReadingTypeById(readingTypeId) ?? symbolonReadingTypes[0];
 
   const [stage, setStage] = useState<Stage>("setup");
-  const [count, setCount] = useState<CardCount>(topic.defaultCount);
-  const [threeVariantId, setThreeVariantId] = useState(THREE_CARD_VARIANTS[0].id);
+  const [count, setCount] = useState<SymbolonCardCount>(readingType.defaultCount);
   const [question, setQuestion] = useState("");
   const [mode, setMode] = useState<ReadingMode>("interpret");
   const [revealedCount, setRevealedCount] = useState(0);
@@ -67,25 +62,24 @@ export function TarotPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage, reducedMotion]);
 
-  const handleTopicChange = (id: string) => {
-    setTopicId(id);
-    const nextTopic = getTopicById(id);
-    if (nextTopic) setCount(nextTopic.defaultCount);
-    setThreeVariantId(THREE_CARD_VARIANTS[0].id);
+  const handleReadingTypeChange = (id: string) => {
+    setReadingTypeId(id);
+    const next = getSymbolonReadingTypeById(id);
+    if (next) setCount(next.defaultCount);
   };
 
-  const positions = resolvePositions(topic.id, count, threeVariantId);
-  const layout = layoutForCount(count);
+  const positions = resolveSymbolonPositions(count);
+  const layout = symbolonLayoutForCount(count);
   const revealedIds = new Set(selections.slice(0, revealedCount).map((d) => d.position.id));
   const selectionComplete = selections.length >= positions.length;
 
   const handleContinueToSelection = () => {
-    start(allCards, SELECTION_POOL_SIZE);
+    start(symbolonCards, SELECTION_POOL_SIZE);
     setStage("select");
   };
 
   const handleReset = () => {
-    start(allCards, SELECTION_POOL_SIZE);
+    start(symbolonCards, SELECTION_POOL_SIZE);
     setRevealedCount(0);
     setStage("select");
   };
@@ -94,28 +88,20 @@ export function TarotPage() {
     <div className="container">
       {stage === "setup" && (
         <div className={styles.setup}>
+          <div className={styles.intro}>
+            <h1 className={styles.introTitle}>{t("symbolon.pageTitle")}</h1>
+            <p className={styles.introBody}>{t("symbolon.pageDescription")}</p>
+          </div>
+
           <div className={styles.settingsGroup}>
-            <TopicSelector value={topicId} onChange={handleTopicChange} />
-            <CardCountSelector counts={CARD_COUNTS} value={count} onChange={setCount} />
+            <SymbolonReadingTypeSelector value={readingTypeId} onChange={handleReadingTypeChange} />
+            <CardCountSelector counts={readingType.recommendedCounts} value={count} onChange={setCount} />
 
-            {count === 3 && (
-              <div className={styles.variantTabs} role="tablist" aria-label={t("reading.threeVariantLabel")}>
-                {THREE_CARD_VARIANTS.map((variant) => (
-                  <button
-                    key={variant.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={variant.id === threeVariantId}
-                    className={`${styles.variantTab} ${variant.id === threeVariantId ? styles.variantTabActive : ""}`}
-                    onClick={() => setThreeVariantId(variant.id)}
-                  >
-                    {getLocalized(variant.label, lang)}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            <QuestionInput value={question} onChange={setQuestion} placeholder={getLocalized(topic.defaultQuestion, lang)} />
+            <QuestionInput
+              value={question}
+              onChange={setQuestion}
+              placeholder={getLocalized(readingType.defaultQuestion, lang)}
+            />
             <ModeToggle value={mode} onChange={setMode} />
 
             <Button variant="primary" onClick={handleContinueToSelection}>
@@ -133,7 +119,7 @@ export function TarotPage() {
               {t("common.back")}
             </Button>
             <Button variant="primary" disabled={!selectionComplete} onClick={() => setStage("result")}>
-              {t("reading.viewResultButton")}
+              {t("symbolon.viewResultButton")}
             </Button>
           </div>
         </div>
@@ -141,8 +127,8 @@ export function TarotPage() {
 
       {stage === "result" && (
         <div className={styles.resultStage}>
-          <ReadingResultView
-            topic={topic}
+          <SymbolonReadingResultView
+            readingType={readingType}
             question={question}
             mode={mode}
             layout={layout}

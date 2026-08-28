@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { TarotCard } from "../components/tarot/TarotCard";
+import { CardSystemTabs } from "../components/cards/CardSystemTabs";
 import { allCards } from "../data/cards";
 import { useLang } from "../hooks/useLang";
 import { getLocalized } from "../utils/i18n";
@@ -52,6 +53,7 @@ export function CardsListPage() {
 
   return (
     <div className="container">
+      <CardSystemTabs />
       <header className={styles.header}>
         <h1>{t("cardsPage.title")}</h1>
         <p className={styles.desc}>{t("cardsPage.description")}</p>

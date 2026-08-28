@@ -1,18 +1,28 @@
 import { useTranslation } from "react-i18next";
-import type { DrawnCard, SpreadPosition, TarotCard } from "../../types/tarot";
+import type { SpreadPosition } from "../../types/common";
 import { useLang } from "../../hooks/useLang";
 import { getLocalized } from "../../utils/i18n";
 import { CardBack } from "./cardArt/CardBack";
 import styles from "./CardSelectionBoard.module.css";
 
-interface CardSelectionBoardProps {
-  pool: TarotCard[];
-  positions: SpreadPosition[];
-  selections: DrawnCard[];
-  onPick: (card: TarotCard) => void;
+interface Identifiable {
+  id: string;
 }
 
-export function CardSelectionBoard({ pool, positions, selections, onPick }: CardSelectionBoardProps) {
+interface CardSelectionBoardProps<TCard extends Identifiable> {
+  pool: TCard[];
+  positions: SpreadPosition[];
+  selections: { card: TCard; position: SpreadPosition }[];
+  onPick: (card: TCard) => void;
+}
+
+/** Card-system-agnostic: works for any deck that shares the generic card-back design. */
+export function CardSelectionBoard<TCard extends Identifiable>({
+  pool,
+  positions,
+  selections,
+  onPick,
+}: CardSelectionBoardProps<TCard>) {
   const { t } = useTranslation();
   const lang = useLang();
   const total = positions.length;

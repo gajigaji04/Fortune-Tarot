@@ -1,0 +1,46 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto;
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-text-on-dark-dim);
+  text-align: center;
+  margin: 0;
+}
+
+.captionIndex {
+  color: var(--color-gold-dim);
+  margin-right: 0.3em;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(96px, 140px));
+    gap: var(--space-5) var(--space-6);
+    max-width: none;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(90px, 128px));
+  }
+}

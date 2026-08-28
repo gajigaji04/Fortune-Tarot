@@ -11,6 +11,8 @@
   },
   "nav": {
     "browse": "타로 보기",
+    "tarot": "타로",
+    "symbolon": "심볼론",
     "learn": "이용 안내",
     "cards": "카드 의미",
     "openMenu": "메뉴 열기",
@@ -21,8 +23,10 @@
     "title": "당신의 카드를 펼쳐보세요",
     "subtitle": "마음속으로 질문을 떠올리고, 카드를 선택하세요.",
     "ctaToday": "타로 보기",
+    "ctaSymbolon": "심볼론으로 보기",
     "chooseTitle": "무엇을 알고 싶으신가요?",
-    "topicsTitle": "어떤 운세가 궁금하신가요?"
+    "topicsTitle": "어떤 운세가 궁금하신가요?",
+    "symbolonTitle": "심볼론으로 무엇을 살펴볼까요?"
   },
   "reading": {
     "countLabel": "몇 장의 카드를 뽑으시겠습니까?",
@@ -84,6 +88,25 @@
   },
   "cardMeaning": {
     "symbolHeading": "카드가 상징하는 것"
+  },
+  "symbolon": {
+    "pageTitle": "심볼론",
+    "pageDescription": "타로와는 다른 방식으로, 지금의 상황과 내면의 흐름을 살펴봅니다.",
+    "chooseTitle": "무엇을 살펴보고 싶으신가요?",
+    "viewResultButton": "심볼론 결과 보기",
+    "positionCardAria": "{{position}} 자리, {{name}}",
+    "positionReadTemplate": "[{{position}}] 자리에는 {{name}} 카드가 나왔습니다. {{body}}",
+    "synthesisOpeningWithQuestion": "\"{{question}}\"라는 질문에 대해 {{readingType}} 리딩이 펼쳐졌습니다.",
+    "synthesisOpening": "{{readingType}} 리딩이 펼쳐졌습니다.",
+    "synthesisMultiCard": "여러 장의 카드가 함께 나타난 만큼, 하나의 장면이 아니라 이어지는 흐름으로 읽어보시기 바랍니다.",
+    "synthesisFlow": "[{{firstPosition}}]의 {{firstName}}에서 시작된 흐름은 [{{lastPosition}}]의 {{lastName}}(으)로 이어집니다. 각 카드가 놓인 자리를 하나씩 짚어보며, 지금 당신에게 필요한 것이 무엇인지 천천히 헤아려 보시기 바랍니다.",
+    "symbolHeading": "카드가 상징하는 것",
+    "positionMeaningHeading": "이 포지션에서의 의미",
+    "meaningHeading": "카드의 의미",
+    "imagePlaceholder": "카드 이미지 준비 중",
+    "cardsPageTitle": "심볼론 카드의 의미",
+    "cardsPageDescription": "카드를 선택해 상징과 의미를 자세히 살펴보세요.",
+    "totalCardsLabel": "전체 {{count}}장"
   },
   "detail": {
     "back": "목록으로 돌아가기",

@@ -11,6 +11,8 @@
   },
   "nav": {
     "browse": "Read Tarot",
+    "tarot": "Tarot",
+    "symbolon": "Symbolon",
     "learn": "Guide",
     "cards": "Card Meanings",
     "openMenu": "Open menu",
@@ -21,8 +23,10 @@
     "title": "Lay Out Your Cards",
     "subtitle": "Hold your question in mind, and choose your cards.",
     "ctaToday": "Read Tarot",
+    "ctaSymbolon": "Read Symbolon",
     "chooseTitle": "What would you like to know?",
-    "topicsTitle": "Which reading calls to you?"
+    "topicsTitle": "Which reading calls to you?",
+    "symbolonTitle": "What would you like Symbolon to show you?"
   },
   "reading": {
     "countLabel": "How many cards would you like to draw?",
@@ -84,6 +88,25 @@
   },
   "cardMeaning": {
     "symbolHeading": "What This Card Symbolizes"
+  },
+  "symbolon": {
+    "pageTitle": "Symbolon",
+    "pageDescription": "A different lens from Tarot -- look at where you stand right now, and what's moving beneath the surface.",
+    "chooseTitle": "What would you like to explore?",
+    "viewResultButton": "Reveal Your Reading",
+    "positionCardAria": "{{position}}, {{name}}",
+    "positionReadTemplate": "In the {{position}} position, {{name}} appeared. {{body}}",
+    "synthesisOpeningWithQuestion": "For the question \"{{question}}\", your {{readingType}} reading unfolds as follows.",
+    "synthesisOpening": "Your {{readingType}} reading unfolds as follows.",
+    "synthesisMultiCard": "With several cards appearing together, read them not as one single snapshot but as a flow that carries from one into the next.",
+    "synthesisFlow": "The flow that began with {{firstName}} in the {{firstPosition}} position leads into {{lastName}} in the {{lastPosition}} position. Take a moment to consider each card in its place, and what you truly need right now.",
+    "symbolHeading": "What This Card Symbolizes",
+    "positionMeaningHeading": "Meaning in This Position",
+    "meaningHeading": "The Card's Meaning",
+    "imagePlaceholder": "Card Image Coming Soon",
+    "cardsPageTitle": "Symbolon Card Meanings",
+    "cardsPageDescription": "Choose a card to explore its symbolism and meaning in depth.",
+    "totalCardsLabel": "{{count}} Cards"
   },
   "detail": {
     "back": "Back to the list",
